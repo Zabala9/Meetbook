@@ -1,7 +1,7 @@
 async function csrfFetch(url, options = {}) {
-    //set options.method to 'GET' if there is no method
-    options.method = options.method || 'GET';
-    //set options.headers to an empty object if there is no header
+    // set options.method to 'GET' if there is no method
+    options.method = options.method || "GET";
+    // set options.headers to an empty object if there is no headers
     options.headers = options.headers || {};
 
     // if the options.method is not 'GET', then set the "Content-Type" header to
@@ -23,17 +23,6 @@ async function csrfFetch(url, options = {}) {
     // if the response status code is under 400, then return the response to the
     // next promise chain
     return res;
-}
-
-export function storeCSRFToken(response) {
-    const csrfToken = response.headers.get("X-CSRF-Token");
-    if (csrfToken) sessionStorage.setItem("X-CSRF-Token", csrfToken);
-}
-
-export async function restoreCSRF() {
-    const response = await csrfFetch("/api/session");
-    storeCSRFToken(response);
-    return response;
 }
 
 export default csrfFetch;
