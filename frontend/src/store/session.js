@@ -8,9 +8,8 @@ const currentUser = (user) => ({
     user
 });
 
-const removeCurrentUser = (user) => ({
-    type: REMOVE_CURRENT_USER,
-    user
+const removeCurrentUser = () => ({
+    type: REMOVE_CURRENT_USER
 });
 
 const storeCSRFToken = (response) => {
@@ -57,6 +56,15 @@ export const signup = (user) => async(dispatch) => {
     const data = await res.json();
     storeCurrentUser(data.user);
     dispatch(currentUser(data.user));
+    return res;
+};
+
+export const logout = () => async(dispatch) => {
+    const res = await csrfFetch(`/api/session`, {
+        method: 'DELETE'
+    });
+    storeCurrentUser(null);
+    dispatch(removeCurrentUser());
     return res;
 };
 
