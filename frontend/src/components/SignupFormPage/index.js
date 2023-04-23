@@ -83,7 +83,7 @@ function SignupFormPage(){
                         required
                     />
                 </label>
-                <input type='submit' value='Sign Up' />
+                <input type='submit' value='Create new account' />
             </form>
         </>
     )
