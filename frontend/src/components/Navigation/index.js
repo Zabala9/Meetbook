@@ -1,9 +1,7 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
-import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 
 function Navigation() {
     const sessionUser = useSelector(state => state.session.user);
@@ -11,21 +9,16 @@ function Navigation() {
     let sessionLinks;
     if(sessionUser){
         sessionLinks = (
-            <ProfileButton user={sessionUser} />
-        );
-    } else {
-        sessionLinks = (
             <>
-                <NavLink to={'/login'} >Log In</NavLink>
-                <NavLink to={'/signup'} >Sign Up</NavLink>
+                <ProfileButton user={sessionUser} />
+                <h1>You are Log in!</h1>
             </>
-        )
+        );
     }
 
     return(
         <ul>
             <li>
-                <NavLink to={'/'} >Home</NavLink>
                 {sessionLinks}
             </li>
         </ul>

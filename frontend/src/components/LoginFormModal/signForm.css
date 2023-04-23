@@ -1,0 +1,83 @@
+#signup{
+    border-style: hidden;
+    border-radius: 10px;
+    font-size: 40px;
+    background-color: rgb(69, 69, 69);
+    color: white;
+    margin-left: 190px;
+    margin-bottom: 25px;
+}
+
+#main-text > h1{
+    font-size: 45px;
+    margin: 10px;
+}
+
+#main-text > label{
+    font-size: 25px;
+    margin: 10px;
+}
+
+#names{
+    margin-top: 30px;
+    margin-left: 10px;
+}
+
+#name > input{
+    border-radius: 10px;
+    font-size: 30px;
+    width: 250px;
+}
+
+#lastname{
+    margin-left: 15px;
+    margin-right: 10px;
+}
+
+#lastname > input{
+    border-radius: 10px;
+    font-size: 30px;
+    width: 350px;
+}
+
+#email > input{
+    border-radius: 10px;
+    font-size: 30px;
+}
+
+#email-sign > input{
+    border-radius: 10px;
+    font-size: 30px;
+    width: 400px;
+}
+
+#password-sign{
+    margin-left: 10px;
+}
+
+#password-sign > input{
+    border-radius: 10px;
+    font-size: 30px;
+    width: 250px;
+}
+
+#confirm-password{
+    margin-left: 10px;
+}
+
+#confirm-password > input{
+    border-radius: 10px;
+    font-size: 30px;
+    width: 350px;
+}
+
+#sign-up{
+    border-style: hidden;
+    border-radius: 10px;
+    margin-top: 50px;
+    margin-left: 11vw;
+    margin-bottom: 25px;
+    color: white;
+    font-size: 40px;
+    background-color: rgb(69, 69, 69);
+}

@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import * as sessionActions from '../../store/session';
 import {useDispatch, useSelector} from 'react-redux';
-import {Redirect} from 'react-router-dom';
+import {Redirect, NavLink, useHistory} from 'react-router-dom';
+import SignupFormModal from '../LoginFormModal';
 import './LoginForm.css';
 
 function LoginFormPage(){
@@ -10,6 +11,7 @@ function LoginFormPage(){
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState([]);
+    const history = useHistory();
 
     if(sessionUser) return <Redirect to={'/'} />;
 
@@ -34,29 +36,43 @@ function LoginFormPage(){
             })
     };
 
+    const changeRoute = () => {
+        let path = '/signup'
+        history.push(path);
+    };
+
     return (
         <>
-            <h1>Log In!</h1>
-            <form onSubmit={handleSubmit}>
-                <ul>
-                    {errors.map(error => <li key={error} >{error}</li>)}
-                </ul>
-                <label>
-                    Email: 
-                    <input type='text' value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        required
-                    /> 
-                </label>
-                <label>
-                    Password: 
-                    <input type='password' value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                    />
-                </label>
-                <input type='submit' value='Log In' />
-            </form>
+            <div id='general'>
+                <div id='left'>
+                    <h1>Meetbook</h1>
+                    <label>Connect with friends and the</label>
+                    <br></br>
+                    <label>world around you on Meetbook.</label>
+                </div>
+                <div id='rigth'>
+                    <form onSubmit={handleSubmit}>
+                        <ul>
+                            {errors.map(error => <li key={error} >{error}</li>)}
+                        </ul>
+                        <label id='email'>
+                            <input type='text' value={email}
+                                onChange={(e) => setEmail(e.target.value)} placeholder='Email'
+                                required
+                            /> 
+                        </label>
+                        <label id='password'>
+                            <input type='password' value={password}
+                                onChange={(e) => setPassword(e.target.value)} placeholder='Password'
+                                required
+                            />
+                        </label>
+                        <input type='submit' value='Log In' id='login-button' />
+                    </form>
+                    <SignupFormModal />
+                    {/* <button onClick={changeRoute} id='signup' >Sign up</button> */}
+                </div>
+            </div>
         </>
     )
 };

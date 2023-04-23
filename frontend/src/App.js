@@ -9,15 +9,15 @@ function App() {
     <>
       <Navigation />
       <Switch>
-        <Route path="/login" >
+        <Route exact path="/" >
           <LoginFormPage />
         </Route>
-        <Route path="/signup" >
+        {/* <Route exact path="/signup" >
           <SignupFormPage />
-        </Route>
-        <Route path="/" >
+        </Route> */}
+        {/* <Route path="/" >
           <h1>You are Login!</h1>
-        </Route>
+        </Route> */}
       </Switch>
     </>
   );

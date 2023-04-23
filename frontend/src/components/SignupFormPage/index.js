@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { Redirect, NavLink } from 'react-router-dom';
 import * as sessionActions from '../../store/session';
 import './SignupForm.css';
 
@@ -43,6 +43,7 @@ function SignupFormPage(){
     return (
         <>
             <h1>Sign up!</h1>
+            <label>It's quick and easy.</label>
             <form onSubmit={handleSubmit}>
                 <ul>
                     {errors.map((error) => <li key={error} >{error}</li>)}
