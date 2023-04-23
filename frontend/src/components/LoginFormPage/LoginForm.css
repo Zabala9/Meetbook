@@ -9,13 +9,21 @@ body{
     margin-top: 13vw;
 }
 
-#left > h1{
+#left h1{
     font-size: 70px;
     color: red;
 }
 
-#left > label{
+#left label{
     font-size: 30px;
+}
+
+#form-left{
+    border-style: hidden;
+    border-radius: 10px;
+    font-size: 25px;
+    color: white;
+    background-color: rgb(69, 69, 69);
 }
 
 #rigth{

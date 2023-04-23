@@ -11,7 +11,9 @@ function LoginFormPage(){
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState([]);
-    const history = useHistory();
+    // const emailGuest = 'andresvaron88@gmail.com';
+    // const passwordGuest ='password';
+    // const history = useHistory();
 
     if(sessionUser) return <Redirect to={'/'} />;
 
@@ -33,22 +35,51 @@ function LoginFormPage(){
                 } else {
                     setErrors([res.statusText]);
                 }
-            })
+            });
     };
 
-    const changeRoute = () => {
-        let path = '/signup'
-        history.push(path);
+    const handleSubmitGuest = (e) => {
+        e.preventDefault();
+        const email = 'andresvaron88@gmail.com';
+        const password = 'password';
+        return dispatch(sessionActions.login({email, password}))
+            .catch(async (res) => {
+                let data;
+                try{
+                    data = await res.clone().json();
+                } catch {
+                    data = await res.text();
+                }
+                if(data?.errors){
+                    setErrors(data.errors);
+                } else if(data){
+                    setErrors([data]);
+                } else {
+                    setErrors([res.statusText]);
+                }
+            });
     };
+
+    // const changeRoute = () => {
+    //     let path = '/signup'
+    //     history.push(path);
+    // };
 
     return (
         <>
             <div id='general'>
                 <div id='left'>
-                    <h1>Meetbook</h1>
-                    <label>Connect with friends and the</label>
-                    <br></br>
-                    <label>world around you on Meetbook.</label>
+                    <form onSubmit={handleSubmitGuest}>
+                        <h1>Meetbook</h1>
+                        <label>Connect with friends and the</label>
+                        <br></br>
+                        <label>world around you on Meetbook.</label>
+                        <br />
+                        <br />
+                        <label>You can try our website without Log In</label>
+                        <br></br>
+                        <input id='form-left' type='submit' value={'here'} />
+                    </form>
                 </div>
                 <div id='rigth'>
                     <form onSubmit={handleSubmit}>
