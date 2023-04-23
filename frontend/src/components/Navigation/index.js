@@ -1,17 +1,20 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
+import { Redirect } from "react-router-dom";
 import './Navigation.css';
 
 function Navigation() {
     const sessionUser = useSelector(state => state.session.user);
+
+    if(!sessionUser) return <Redirect to={'/'} />
 
     let sessionLinks;
     if(sessionUser){
         sessionLinks = (
             <>
                 <ProfileButton user={sessionUser} />
-                <h1>You are Log in!</h1>
+                {/* <h1>You are Log in!</h1> */}
             </>
         );
     }
