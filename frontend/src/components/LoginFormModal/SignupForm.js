@@ -1,16 +1,20 @@
 import React, {useState} from "react";
 import * as sessionActions from '../../store/session';
-import { useDispatch } from "react-redux";
+import { Redirect, NavLink } from 'react-router-dom';
+import { useDispatch, useSelector } from "react-redux";
 import './signForm.css';
 
 function SignupForm(){
     const dispatch = useDispatch();
+    const sessionUser = useSelector(state => state.session.user);
     const [name, setName] = useState('');
     const [lastname, setLastname] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [errors, setErrors] = useState([]);
+
+    if(sessionUser) return <Redirect to={'/'} />;
 
     const handleSubmit = (e) => {
         e.preventDefault();
