@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
+import PostIndex from '../posts/PostIndex';
 import { Redirect } from "react-router-dom";
 import './Navigation.css';
 
@@ -14,6 +15,7 @@ function Navigation() {
         sessionLinks = (
             <>
                 <ProfileButton user={sessionUser} />
+                <PostIndex user={sessionUser} />
                 {/* <h1>You are Log in!</h1> */}
             </>
         );

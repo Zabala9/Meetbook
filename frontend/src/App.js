@@ -16,9 +16,6 @@ function App() {
         <Route exact path="/profile" >
           <Profile />
         </Route>
-        {/* <Route path="/" >
-          <h1>You are Login!</h1>
-        </Route> */}
       </Switch>
     </>
   );

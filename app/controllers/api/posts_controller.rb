@@ -1,6 +1,7 @@
 class Api::PostsController < ApplicationController
     def index
         @posts = Post.all
+        render :index
     end
 
     def create
@@ -36,11 +37,9 @@ class Api::PostsController < ApplicationController
     end
 
     def destroy
-        @post = Post.find_by(params[id])
-        if @post.destroy
+        # @post = Post.find_by(params[:id])
+        if @post&.destroy
             render :index
-        else
-            render ['Post not found']
         end
     end
 

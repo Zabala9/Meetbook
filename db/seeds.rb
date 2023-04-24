@@ -6,7 +6,10 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 ApplicationRecord.transaction do
-    puts "Destroying tables..."
+    
+    puts "Destroying posts..."
+    Post.destroy_all
+    puts "Destroying users..."
     User.destroy_all
 
     puts "Resetting primary keys..."
@@ -26,6 +29,7 @@ ApplicationRecord.transaction do
         password: 'password'
     )
 
+    puts "Creating Posts..."
     Post.create!(
         content: 'This is the best app ever!',
         author_id: 1
