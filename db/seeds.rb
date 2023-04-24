@@ -26,5 +26,10 @@ ApplicationRecord.transaction do
         password: 'password'
     )
 
+    Post.create!(
+        content: 'This is the best app ever!',
+        author_id: 1
+    )
+
     puts "Done!"
 end

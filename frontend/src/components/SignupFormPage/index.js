@@ -45,7 +45,7 @@ function SignupFormPage(){
             <h1>Sign up!</h1>
             <label>It's quick and easy.</label>
             <form onSubmit={handleSubmit}>
-                <ul>
+                <ul >
                     {errors.map((error) => <li key={error} >{error}</li>)}
                 </ul>
                 <label>

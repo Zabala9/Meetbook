@@ -49,7 +49,7 @@ function SignupForm(){
             <form onSubmit={handleSubmit}>
                 <div id="names">
                     <ul>
-                        {errors.map((error) => <li key={error} >{error}</li>)}
+                        {errors.map((error) => <li key={error} id='errors-sign' >{error}</li>)}
                     </ul>
                     <label id="name">
                         <input type='text' value={name}

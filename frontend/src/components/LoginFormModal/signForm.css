@@ -8,6 +8,11 @@
     margin-bottom: 25px;
 }
 
+#errors-sign{
+    font-size: 25px;
+    font-family: cursive;
+}
+
 #main-text > h1{
     font-size: 45px;
     margin: 10px;
@@ -16,6 +21,7 @@
 #main-text > label{
     font-size: 25px;
     margin: 10px;
+    font-family: cursive;
 }
 
 #names{
