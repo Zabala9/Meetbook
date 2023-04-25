@@ -2,13 +2,11 @@ import {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import {getPost, fetchPost, createPost, updatePost} from '../../store/posts';
-import { Redirect, useHistory } from 'react-router-dom';
 
 const PostForm = () => {
     const {postId} = useParams();
     const dispatch = useDispatch();
     const currentUserId = useSelector(state => state.session.user.id);
-    const history = useHistory();
     const formType = postId ? 'Update Post' : 'Create Post';
     let post = useSelector(getPost(postId));
     if(formType === 'Create Post'){
@@ -17,11 +15,6 @@ const PostForm = () => {
             authorId: currentUserId
         }
     }
-
-    const changeRoute = () => {
-        let path = '/';
-        history.push(path);
-    };
 
     const [content, setContent] = useState(post.content);
     const [authorId, setAuthorId] = useState(currentUserId);

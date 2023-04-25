@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { Modal } from "../../context/Modal";
 import PostForm from "./PostForm";
-import { Redirect, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 function PostFormModal(){
     const history = useHistory();
