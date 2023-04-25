@@ -14,7 +14,7 @@ const PostIndex = () => {
 
     return(
         <>
-            <ul>
+            <ul id='elements-post-index'>
                 <PostForm />
                 {
                     posts.map(post => <>

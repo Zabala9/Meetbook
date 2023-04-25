@@ -22,7 +22,7 @@ ul{
 
 #all-posts{
     margin-top: 30px;
-    margin-left: 27%;
+    margin-left: 34%;
 }
 
 #open-menu{
@@ -32,14 +32,11 @@ ul{
     height: 30px;
 }
 
-#elements-post-button{
-}
-
 #elements-li{
     display: flex;
     justify-content: space-evenly;
 }
 
-#post-content{
-
+#elements-post-index{
+    margin-top: 150px;
 }
