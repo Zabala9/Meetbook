@@ -1,7 +1,6 @@
 import {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {getPosts, fetchPosts} from '../../store/posts.js'
-import PostsButton from './PostButton.js';
 import PostItem from './PostItem.js';
 import PostForm from './PostForm.js';
 
@@ -20,10 +19,7 @@ const PostIndex = () => {
                 {
                     posts.map(post => <>
                     <PostItem key={`post${post.id}`} post={post} />
-                    <PostsButton
-                        post={post}
-                        key={post.id}
-                    /> </>)
+                    </>)
                 }
             </ul>
         </>

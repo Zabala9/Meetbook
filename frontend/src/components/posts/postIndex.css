@@ -1,0 +1,45 @@
+ul{
+    border-radius: 10px;
+    margin-left: 4%;
+    margin-top: 2%;
+    width: 90%;
+}
+
+#post-li{
+    border-radius: 10px;
+    background-color: white;
+    width: 500px;
+    margin: 10px;
+}
+
+.post-dropdown{
+    margin-left: -260px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    width: 90px;
+    /* background-color: green; */
+}
+
+#all-posts{
+    margin-top: 30px;
+    margin-left: 27%;
+}
+
+#open-menu{
+    border: 2px solid rgb(74, 74, 74);
+    border-radius: 5px;
+    margin-top: 10px;
+    height: 30px;
+}
+
+#elements-post-button{
+}
+
+#elements-li{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#post-content{
+
+}

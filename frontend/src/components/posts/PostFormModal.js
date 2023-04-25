@@ -8,8 +8,7 @@ function PostFormModal(){
     const [showEditPostModal, setShowPostModal] = useState(true);
 
     const changeRoute = () => {
-        let path = '/';
-        history.push(path);
+        history.goBack();
     };
 
     return(

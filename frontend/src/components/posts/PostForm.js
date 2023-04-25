@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import {getPost, fetchPost, createPost, updatePost} from '../../store/posts';
+import './postForm.css';
 
 const PostForm = () => {
     const {postId} = useParams();
@@ -32,16 +33,16 @@ const PostForm = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <h2>{formType}</h2>
-            <label>
-                <input type='text' value={content}
+        <form onSubmit={handleSubmit} id='form-post'>
+            <h2 id='form-type'>{formType === 'Update Post' ? 'Update Post' : ''}</h2>
+            <label >
+                <input type='text' value={content} id='text-post'
                     onChange={(e) => setContent(e.target.value)}
                     placeholder='What is on your mind?'
                     required
                 />
             </label>
-            <button id='create-post' >{formType}</button>
+            <button id='button-post-form' >{formType === 'Create Post' ? 'Post' : 'Edit Post'}</button>
         </form>
     )
 };

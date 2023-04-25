@@ -2,8 +2,7 @@ import React, {useEffect, useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import * as postsActions from '../../store/posts.js'
 import { useHistory } from "react-router-dom";
-import PostFormModal from "./PostFormModal.js";
-import './post.css';
+import './postIndex.css';
 
 function PostsButton({post}){
     const dispatch = useDispatch();
@@ -46,17 +45,16 @@ function PostsButton({post}){
 
     return(
         <>
-            <button onClick={openMenu}>
+            <button id="open-menu" onClick={openMenu}>
                 <i className="fa-light fa-ellipsis" id="button-post"></i>
             </button>
             { showPostsMenu && (
                 <ul className="post-dropdown">
-                    <li>
-
+                    <li id="elements-post-button">
                         {post.authorId === currentUserId ? <button onClick={changeRoute}>Edit post</button> : ''}
                         {/* {post.authorId === currentUserId ? <button onClick={changeRoute} id="edit-post-button">Edit post</button> : ''} */}
                     </li>
-                    <li>
+                    <li id="elements-post-button">
                         {post.authorId === currentUserId ? <button onClick={remove} id="remove-post-button" >Delete post</button> : ''}
                     </li>
                 </ul>

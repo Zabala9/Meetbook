@@ -1,0 +1,28 @@
+#form-post{
+    margin-top: 100px;
+    margin-left: 40%;
+    height: 150px;
+    width: 620px;
+}
+
+#form-type{
+    font-size: 30px;
+    margin-top: -60px;
+    margin-left: -200px;
+    font-family: cursive;
+    width: 180px;
+}
+
+#text-post{
+    border-radius: 8px;
+    margin-left: -160px;
+    font-size: 28px;
+}
+
+#button-post-form{
+    border-radius: 5px;
+    margin-left: 10px;
+    font-size: 27px;
+    color: red;
+    background-color: rgb(66, 66, 66);
+}
