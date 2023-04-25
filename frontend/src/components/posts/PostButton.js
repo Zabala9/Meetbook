@@ -31,10 +31,10 @@ function PostsButton({post}){
         return () => document.removeEventListener('click', closePostsMenu);
     }, [showPostsMenu]);
 
-    // const remove = (e) => {
-    //     e.preventDefault();
-    //     dispatch(postsActions.deletePost(post.id))
-    // };
+    const remove = (e) => {
+        e.preventDefault();
+        dispatch(postsActions.deletePost(post.id))
+    };
 
     return(
         <>
@@ -47,7 +47,7 @@ function PostsButton({post}){
                         <button onClick={changeRoute} id="edit-post-button">Edit post</button>
                     </li>
                     <li>
-                        <button onClick={() => dispatch(postsActions.deletePost(post.id))} id="remove-post-button" >Delete post</button>
+                        <button onClick={remove} id="remove-post-button" >Delete post</button>
                     </li>
                 </ul>
             )}

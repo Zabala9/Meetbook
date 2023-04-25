@@ -34,6 +34,10 @@ ApplicationRecord.transaction do
         content: 'This is the best app ever!',
         author_id: 1
     )
+    Post.create!(
+        content: 'Who wants to hang out on Friday?',
+        author_id: 1
+    )
 
     puts "Done!"
 end

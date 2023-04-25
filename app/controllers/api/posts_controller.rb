@@ -15,9 +15,9 @@ class Api::PostsController < ApplicationController
     end
 
     def show
-        @post = Post.find_by(params[:id])
+        @post = Post.find_by(id: params[:id])
         if @post
-            render :show
+            render :index
         else
             render json: {errors: @post.errors.full_messages},
                 status: :unprocessable_entity
@@ -25,7 +25,7 @@ class Api::PostsController < ApplicationController
     end
 
     def update
-        @post = Post.find_by(params[:id])
+        @post = Post.find_by(id: params[:id])
         if @post&.update(post_params)
             render :show
         elsif !@post
@@ -37,9 +37,9 @@ class Api::PostsController < ApplicationController
     end
 
     def destroy
-        # @post = Post.find_by(params[:id])
+        @post = Post.find_by(id: params[:id])
         if @post&.destroy
-            render :index
+            head :no_content
         end
     end
 
