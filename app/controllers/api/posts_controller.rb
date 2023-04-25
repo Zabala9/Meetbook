@@ -5,10 +5,9 @@ class Api::PostsController < ApplicationController
     end
 
     def create
-        puts post_params
         @post = Post.new(post_params)
         
-        if @post.save
+        if @post&.save
             render :show
         else
             render json: {errors: @post.errors.full_messages},
@@ -19,7 +18,7 @@ class Api::PostsController < ApplicationController
     def show
         @post = Post.find_by(id: params[:id])
         if @post
-            render :index
+            render :show
         else
             render json: {errors: @post.errors.full_messages},
                 status: :unprocessable_entity

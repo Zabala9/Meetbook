@@ -46,7 +46,10 @@ export const fetchPost = (postId) => async(dispatch) => {
 export const createPost = (post) => async(dispatch) => {
     const res = await csrfFetch(`/api/posts`, {
         method: 'POST',
-        body: JSON.stringify(post)
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({post})
     });
     if(res.ok){
         const newPost = await res.json();
@@ -55,9 +58,12 @@ export const createPost = (post) => async(dispatch) => {
 };
 
 export const updatePost = (post) => async(dispatch) => {
-    const res = await csrfFetch(`/api/posts,${post.id}`, {
+    const res = await csrfFetch(`/api/posts/${post.id}`, {
         method: 'PATCH',
-        body: JSON.stringify(post)
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({post})
     });
     if(res.ok){
         const newPost = await res.json();
@@ -75,13 +81,13 @@ export const deletePost = (postId) => async(dispatch) => {
 };
 
 const postsReducer = (state = {}, action) => {
-    const newState = {...state};
     switch(action.type){
         case RECEIVE_POSTS:
             return {...action.posts};
         case RECEIVE_POST:
             return {...state, [action.post.id]: action.post };
         case REMOVE_POST:
+            const newState = {...state};
             delete newState[action.postId];
             return newState;
         default:

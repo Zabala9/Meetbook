@@ -8,7 +8,6 @@ function Profile(){
     return (
         <>
             <h1>This is your profile!</h1>
-            <Link to={'/'} >Main page</Link>
         </>
     )
 };

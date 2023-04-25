@@ -22,7 +22,7 @@ const PostForm = () => {
 
     useEffect(() => {
         if(postId) dispatch(fetchPost(postId));
-    }, [postId]);
+    }, [dispatch, postId]);
 
     const handleSubmit = (e) => {
         e.preventDefault();

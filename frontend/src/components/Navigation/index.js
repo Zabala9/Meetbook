@@ -4,6 +4,7 @@ import ProfileButton from './ProfileButton';
 import PostIndex from '../posts/PostIndex';
 import { Redirect } from "react-router-dom";
 import './Navigation.css';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 function Navigation() {
     const sessionUser = useSelector(state => state.session.user);
@@ -14,9 +15,9 @@ function Navigation() {
     if(sessionUser){
         sessionLinks = (
             <>
+                <Link to={'/'} >Main</Link>
                 <ProfileButton user={sessionUser} />
                 <PostIndex user={sessionUser} />
-                {/* <h1>You are Log in!</h1> */}
             </>
         );
     }
