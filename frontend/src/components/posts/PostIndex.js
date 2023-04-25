@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {getPosts, fetchPosts} from '../../store/posts.js'
 import PostsButton from './PostButton.js';
 import PostItem from './PostItem.js';
+import PostForm from './PostForm.js';
 
 const PostIndex = () => {
     const dispatch = useDispatch();
@@ -15,6 +16,7 @@ const PostIndex = () => {
     return(
         <>
             <ul>
+                <PostForm />
                 {
                     posts.map(post => <>
                     <PostItem key={`post${post.id}`} post={post} />
