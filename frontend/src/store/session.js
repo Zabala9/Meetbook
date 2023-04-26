@@ -12,10 +12,6 @@ const removeCurrentUser = () => ({
     type: REMOVE_CURRENT_USER
 });
 
-export const getUsers = state => {
-    return state?.users ? Object.values(state.users) : [];
-};
-
 const storeCSRFToken = (response) => {
     const csrfToken = response.headers.get("X-CSRF-Token");
     if (csrfToken) sessionStorage.setItem("X-CSRF-Token", csrfToken);

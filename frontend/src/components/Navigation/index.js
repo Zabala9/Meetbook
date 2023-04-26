@@ -25,18 +25,19 @@ function Navigation() {
         sessionLinks = (
             <>
                 <div id='user-options' >
-                    <Link id="link-main" to={'/'} ><img src={image} width={'90px'} height={'85px'} ></img></Link>
+                    <Link id="link-main" to={'/'} onChange={changeRoute} ><img src={image} width={'90px'} height={'85px'} ></img></Link>
                     <ProfileButton user={sessionUser} />
                 </div>
                 <PostIndex user={sessionUser} />
-            </>   
-        )
+            </>
+        );
         profileLinks = (
             <>
                 <div id='user-options' >
                     <Link id="link-main" to={'/'} onClick={changeRoute} ><img src={image} width={'90px'} height={'85px'} ></img></Link>
                     <ProfileButton user={sessionUser} />
                 </div>
+                <label id="name-user">{sessionUser.name + " " + sessionUser.lastname}</label>
             </>
         )
     };

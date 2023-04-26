@@ -4,14 +4,12 @@ import PostIndex from "../posts/PostIndex";
 import './profile.css';
 
 function Profile(){
-    const currentNameUser = useSelector(state => state.session.user.name);
-    const currentLastnameUser = useSelector(state => state.session.user.lastname);
+    const sessionUser = useSelector(state => state.session.user);
 
     return (
         <>
-            <label id="name-user">{currentNameUser + " " + currentLastnameUser}</label>
             <div id="content">
-                <PostIndex />
+                <PostIndex user={sessionUser} />
             </div>
         </>
     );
