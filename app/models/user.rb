@@ -28,6 +28,11 @@ class User < ApplicationRecord
     class_name: :Post,
     dependent: :destroy
 
+    has_many :comments,
+    foreign_key: :author_id,
+    class_name: :Comment,
+    dependent: :destroy
+
     before_validation :ensure_session_token
 
     def self.find_by_credentials(email, password)
