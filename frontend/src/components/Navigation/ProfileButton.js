@@ -12,6 +12,7 @@ function ProfileButton(){
     const changeRoute = () => {
         let path = '/profile'
         history.push(path);
+        window.location.reload(false)
     };
 
     const openMenu = () => {

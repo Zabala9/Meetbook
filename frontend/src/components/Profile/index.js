@@ -1,15 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import PostIndex from "../posts/PostIndex";
+import './profile.css';
 
 function Profile(){
-    // const sessionUser = useSelector(state => state.session.user);
-    // if(sessionUser) return <Redirect to={'/profile'} />;
+    const currentNameUser = useSelector(state => state.session.user.name);
+    const currentLastnameUser = useSelector(state => state.session.user.lastname);
 
     return (
         <>
-            <h1>This is your profile!</h1>
+            <label id="name-user">{currentNameUser + " " + currentLastnameUser}</label>
+            <div id="content">
+                <PostIndex />
+            </div>
         </>
-    )
+    );
 };
 
 export default Profile;
