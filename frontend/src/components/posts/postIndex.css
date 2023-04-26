@@ -27,7 +27,8 @@ ul{
 }
 
 #open-menu{
-    border-radius: 5px;
+    border: 1px solid rgb(187, 187, 187);
+    border-radius: 50%;
     margin-top: 10px;
     height: 30px;
 }
@@ -57,4 +58,10 @@ ul{
 #post-content{
     font-size: 25px;
     font-family: cursive;
+}
+
+#edit-label{
+    width: 1px;
+    height: 1px;
+    background-color: green;
 }

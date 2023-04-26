@@ -40,7 +40,7 @@ function PostsButton({post}){
     return(
         <>
             <button id="open-menu" onClick={openMenu}>
-                <i className="fa-light fa-ellipsis-vertical" id="button-post" />
+                <i className="fa-solid fa-ellipsis" id="button-post" />
             </button>
             { showPostsMenu && (
                 <ul className="post-dropdown">

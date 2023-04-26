@@ -38,7 +38,7 @@ const PostForm = () => {
             <label >
                 <input type='text' value={content} id='text-post'
                     onChange={(e) => setContent(e.target.value)}
-                    placeholder='What is on your mind?'
+                    placeholder="What's on your mind?"
                     required
                 />
             </label>
