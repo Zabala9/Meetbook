@@ -38,8 +38,11 @@ li{
 #link-main{
     margin: 10px;
     margin-top: 15px;
-    font-size: 30px;
-    font-family: cursive;
+}
+
+img{
+    border: 2px solid rgb(102, 101, 101);
+    border-radius: 100%;
 }
 
 .profile-dropdown{

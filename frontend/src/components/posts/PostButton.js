@@ -15,12 +15,6 @@ function PostsButton({post}){
         setShowPostsMenu(true);
     };
 
-    // const postFormEdit = () => {
-    //     return(
-    //         <PostFormModal />
-    //     );
-    // };
-
     const changeRoute = () => {
         let path = `${post.id}/edit`
         history.push(path);
@@ -50,13 +44,15 @@ function PostsButton({post}){
             </button>
             { showPostsMenu && (
                 <ul className="post-dropdown">
-                    <li id="elements-post-button">
-                        {post.authorId === currentUserId ? <button onClick={changeRoute}>Edit post</button> : ''}
-                        {/* {post.authorId === currentUserId ? <button onClick={changeRoute} id="edit-post-button">Edit post</button> : ''} */}
-                    </li>
-                    <li id="elements-post-button">
-                        {post.authorId === currentUserId ? <button onClick={remove} id="remove-post-button" >Delete post</button> : ''}
-                    </li>
+                    <div>
+                        <li id="elements-post-button">
+                            {post.authorId === currentUserId ? <button onClick={changeRoute} id="edit-post-button" >Edit post</button> : ''}
+                            {/* {post.authorId === currentUserId ? <button onClick={changeRoute} id="edit-post-button">Edit post</button> : ''} */}
+                        </li>
+                        <li id="elements-post-button">
+                            {post.authorId === currentUserId ? <button onClick={remove} id="remove-post-button" >Delete post</button> : ''}
+                        </li>
+                    </div>
                 </ul>
             )}
         </>

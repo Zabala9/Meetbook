@@ -8,13 +8,14 @@ ul{
 #post-li{
     border-radius: 10px;
     background-color: white;
-    width: 500px;
+    width: 650px;
     margin: 10px;
 }
 
 .post-dropdown{
-    margin-left: -260px;
-    margin-top: 30px;
+    /* position: fixed; */
+    margin-left: -60px;
+    margin-top: 40px;
     margin-bottom: 10px;
     width: 90px;
     /* background-color: green; */
@@ -26,7 +27,6 @@ ul{
 }
 
 #open-menu{
-    border: 2px solid rgb(74, 74, 74);
     border-radius: 5px;
     margin-top: 10px;
     height: 30px;
@@ -39,4 +39,22 @@ ul{
 
 #elements-post-index{
     margin-top: 150px;
+}
+
+#edit-post-button{
+    font-size: 20px;
+    width: 110px;
+    font-family: cursive;
+}
+
+#remove-post-button{
+    font-size: 20px;
+    width: 130px;
+    font-family: cursive;
+    margin-right: 10px;
+}
+
+#post-content{
+    font-size: 25px;
+    font-family: cursive;
 }
