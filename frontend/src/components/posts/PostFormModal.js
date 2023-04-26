@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import { Modal } from "../../context/Modal";
-import PostForm from "./PostForm";
 import { useHistory } from 'react-router-dom';
+import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
+import PostForm from "./PostForm";
 
 function PostFormModal(){
     const history = useHistory();
@@ -14,7 +15,7 @@ function PostFormModal(){
     return(
         <>
             {showEditPostModal && (
-                <Modal onClose={() => {setShowPostModal(false); changeRoute()} }>
+                <Modal onClose={() => {setShowPostModal(false); changeRoute()}}>
                     <PostForm />
                 </Modal>
             )}

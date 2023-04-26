@@ -47,7 +47,6 @@ function PostsButton({post}){
                     <div>
                         <li id="elements-post-button">
                             {post.authorId === currentUserId ? <button onClick={changeRoute} id="edit-post-button" >Edit post</button> : ''}
-                            {/* {post.authorId === currentUserId ? <button onClick={changeRoute} id="edit-post-button">Edit post</button> : ''} */}
                         </li>
                         <li id="elements-post-button">
                             {post.authorId === currentUserId ? <button onClick={remove} id="remove-post-button" >Delete post</button> : ''}

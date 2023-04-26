@@ -25,7 +25,7 @@ function Navigation() {
         sessionLinks = (
             <>
                 <div id='user-options' >
-                    <Link id="link-main" to={'/'} onChange={changeRoute} ><img src={image} width={'90px'} height={'85px'} ></img></Link>
+                    <Link id="link-main" to={'/'} onClick={changeRoute} ><img src={image} width={'90px'} height={'85px'} ></img></Link>
                     <ProfileButton user={sessionUser} />
                 </div>
                 <PostIndex user={sessionUser} />
@@ -45,7 +45,8 @@ function Navigation() {
     return(
         <ul>
             <li>
-                {history.location.pathname === '/' ? sessionLinks : profileLinks}
+                {history.location.pathname === '/' ? sessionLinks : 
+                    history.location.pathname === '/profile' ? profileLinks : ''}
             </li>
         </ul>
     );
