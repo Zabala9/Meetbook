@@ -22,7 +22,7 @@ li{
 #profile-button{
     border-style: hidden;
     border-radius: 5px;
-    font-size: 20px;
+    font-size: 25px;
     font-family: cursive;
     margin: 5px;
 }
@@ -30,9 +30,10 @@ li{
 #logout-button{
     border-style: hidden;
     border-radius: 5px;
-    font-size: 20px;
+    font-size: 25px;
     font-family: cursive;
     margin: 5px;
+    width: 110px;
 }
 
 #link-main{

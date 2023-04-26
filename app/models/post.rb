@@ -20,8 +20,8 @@ class Post < ApplicationRecord
     class_name: :Comment,
     dependent: :destroy
 
-    has_many :likes,
-    foreign_key: :like_id,
-    class_name: :Like,
-    dependent: :destroy
+    # has_many :likes,
+    # foreign_key: :like_id,
+    # class_name: :Like,
+    # dependent: :destroy
 end
