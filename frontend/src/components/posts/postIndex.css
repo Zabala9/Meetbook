@@ -44,6 +44,7 @@ ul{
     font-size: 20px;
     width: 110px;
     font-family: cursive;
+    background-color: rgb(254, 203, 203);
 }
 
 #remove-post-button{
@@ -51,6 +52,7 @@ ul{
     width: 130px;
     font-family: cursive;
     margin-right: 10px;
+    background-color: rgb(254, 203, 203);
 }
 
 #post-content{
