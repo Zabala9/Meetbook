@@ -37,16 +37,23 @@ function Navigation() {
                     <Link id="link-main" to={'/'} onClick={changeRoute} ><img src={image} width={'90px'} height={'85px'} ></img></Link>
                     <ProfileButton user={sessionUser} />
                 </div>
-                <label id="name-user">{sessionUser.name + " " + sessionUser.lastname}</label>
             </>
         )
     };
 
+    let renderLinks;
+    if(history.location.pathname === '/profile'){
+        renderLinks = profileLinks;
+    } else if(history.location.pathname === '/'){
+        renderLinks = sessionLinks;
+    } else {
+        renderLinks = sessionLinks;
+    }
+
     return(
         <ul>
             <li>
-                {history.location.pathname === '/' ? sessionLinks : 
-                    history.location.pathname === '/profile' ? profileLinks : ''}
+                {renderLinks}
             </li>
         </ul>
     );

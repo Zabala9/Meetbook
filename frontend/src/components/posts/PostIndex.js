@@ -14,11 +14,6 @@ const PostIndex = () => {
     if(history.location.pathname === '/profile'){
         posts = posts.filter((post) => post.authorId === currentUser.id)
     };
-    // if(history.location.pathname === '/:postId'){
-    //     posts = '';
-    // };
-
-    // console.log(posts);
 
     useEffect(() => {
         dispatch(fetchPosts());

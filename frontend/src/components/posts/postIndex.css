@@ -31,6 +31,10 @@ ul{
     height: 30px;
 }
 
+#open-menu:hover{
+    background-color: rgb(127, 123, 123);
+}
+
 #elements-li{
     display: flex;
     justify-content: space-evenly;

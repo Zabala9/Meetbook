@@ -19,8 +19,33 @@ li{
     height: 50px;
 }
 
+#user-button:hover, #profile-button:hover, #logout-button:hover{
+    background-color: rgb(255, 165, 165);
+}
+
+#user-button:after {
+  content: "";
+  background: #f1f1f1;
+  display: block;
+  position: absolute;
+  padding-top: 0px;
+  padding-left: 50px;
+  padding-bottom: 50px;
+  margin-left: -8px !important;
+  margin-top: -30px;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+#user-button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}
+
 #profile-button{
-    border-style: hidden;
+    border: 1px solid black;
     border-radius: 5px;
     font-size: 25px;
     font-family: cursive;
@@ -28,12 +53,13 @@ li{
 }
 
 #logout-button{
-    border-style: hidden;
+    border: 1px solid black;
     border-radius: 5px;
     font-size: 25px;
     font-family: cursive;
     margin: 5px;
-    width: 110px;
+    width: 150px;
+    margin-left: -2vw;
 }
 
 #link-main{

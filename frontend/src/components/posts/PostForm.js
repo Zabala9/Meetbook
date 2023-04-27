@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import {useParams, useHistory} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import {getPost, fetchPost, createPost, updatePost} from '../../store/posts';
 import './postForm.css';
@@ -7,7 +7,6 @@ import './postForm.css';
 const PostForm = () => {
     const {postId} = useParams();
     const dispatch = useDispatch();
-    // const history = useHistory();
     const currentUserId = useSelector(state => state.session.user.id);
     const formType = postId ? 'Update Post' : 'Create Post';
     let post = useSelector(getPost(postId));
@@ -18,11 +17,16 @@ const PostForm = () => {
         }
     }
 
-    const [content, setContent] = useState(post.content);
+    const [content, setContent] = useState('');
     const [authorId, setAuthorId] = useState(currentUserId);
 
     useEffect(() => {
-        dispatch(getPost(postId));
+        if (post) {
+            setContent(post.content);
+        }
+    }, [post]);
+
+    useEffect(() => {
         if(postId) dispatch(fetchPost(postId));
     }, [dispatch, postId]);
 
@@ -32,6 +36,10 @@ const PostForm = () => {
         formType === 'Create Post' ? dispatch(createPost(post)) :
             dispatch(updatePost(post));
     };
+    
+    if (!post) {
+        return null;
+    }
 
     return (
         <form onSubmit={handleSubmit} id='form-post'>

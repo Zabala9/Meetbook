@@ -21,6 +21,10 @@ const PostShow = () => {
     };
 
     if(!currentUser) return <Redirect to={'/'} />
+
+    if (!post) {
+        return null;
+    }
     
     return(
         <div id="container-post-show">

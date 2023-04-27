@@ -12,7 +12,7 @@ function ProfileButton(){
     const changeRoute = () => {
         let path = '/profile'
         history.push(path);
-        window.location.reload(false)
+        window.location.reload(false);
     };
 
     const openMenu = () => {
@@ -49,7 +49,7 @@ function ProfileButton(){
                             <button onClick={changeRoute} id="profile-button" >Profile</button>
                         </li>
                         <li>
-                            <button onClick={logout} id="logout-button" >Log Out</button>
+                            <button onClick={logout} id="logout-button" ><i class="fa-solid fa-person-through-window"></i> Log out</button>
                         </li>
                     </div>
                 </ul>
