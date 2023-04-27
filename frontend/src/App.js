@@ -6,6 +6,7 @@ import PostFormModal from "./components/posts/PostFormModal";
 import Navigation from "./components/Navigation";
 import Profile from "./components/Profile";
 import PostShow from "./components/posts/PostShow";
+import PostShowModal from "./components/posts/PostShowModal";
 
 function App() {
   const sessionUser = useSelector(state => state.session.user);
@@ -24,7 +25,7 @@ function App() {
           <PostFormModal />
         </Route>
         <Route exact path='/:postId'>
-          <PostShow />
+          <PostShowModal />
         </Route>
       </Switch>
     </>

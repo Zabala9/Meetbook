@@ -1,5 +1,4 @@
 #modal {
-    margin-top: -150px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,7 +17,7 @@
   border-style: hidden;
   border-radius: 10px;
   position: absolute;
-  top: 500px;
+  top: 15vw;
   /* margin-top: 500px; */
   background-color:white;
 }

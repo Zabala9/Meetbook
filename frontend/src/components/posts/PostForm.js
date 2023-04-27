@@ -7,7 +7,7 @@ import './postForm.css';
 const PostForm = () => {
     const {postId} = useParams();
     const dispatch = useDispatch();
-    const history = useHistory();
+    // const history = useHistory();
     const currentUserId = useSelector(state => state.session.user.id);
     const formType = postId ? 'Update Post' : 'Create Post';
     let post = useSelector(getPost(postId));
@@ -20,9 +20,9 @@ const PostForm = () => {
 
     const [content, setContent] = useState(post.content);
     const [authorId, setAuthorId] = useState(currentUserId);
-    // const [errors, setErrors] = useState([]);
 
     useEffect(() => {
+        dispatch(getPost(postId));
         if(postId) dispatch(fetchPost(postId));
     }, [dispatch, postId]);
 

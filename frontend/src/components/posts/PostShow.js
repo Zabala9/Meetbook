@@ -8,13 +8,13 @@ import './postShow.css';
 const PostShow = () => {
     const {postId} = useParams();
     const dispatch = useDispatch();
-    let post = useSelector(getPost(postId));
+    const post = useSelector(getPost(postId));
     let history = useHistory();
     const currentUser = useSelector(state => state.session.user);
 
     useEffect(() => {
         dispatch(fetchPost(postId));
-    }, [dispatch]);
+    }, [dispatch, postId]);
 
     const goBack = () => {
         history.go(-1);

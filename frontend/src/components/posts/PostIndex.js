@@ -13,9 +13,10 @@ const PostIndex = () => {
 
     if(history.location.pathname === '/profile'){
         posts = posts.filter((post) => post.authorId === currentUser.id)
-    } else if(history.location.pathname === '/:postId'){
-        posts = '';
     };
+    // if(history.location.pathname === '/:postId'){
+    //     posts = '';
+    // };
 
     // console.log(posts);
 
