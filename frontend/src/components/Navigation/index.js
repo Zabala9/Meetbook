@@ -37,6 +37,10 @@ function Navigation() {
                     <Link id="link-main" to={'/'} onClick={changeRoute} ><img src={image} width={'90px'} height={'85px'} ></img></Link>
                     <ProfileButton user={sessionUser} />
                 </div>
+                <label id="name-user">{sessionUser.name + " " + sessionUser.lastname}</label>
+                <div id="content">
+                    <PostIndex user={sessionUser} />
+                </div>
             </>
         )
     };

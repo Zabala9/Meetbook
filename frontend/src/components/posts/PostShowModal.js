@@ -7,14 +7,14 @@ function PostShowModal(){
     const history = useHistory();
     const [showPostModal, setShowPostModal] = useState(true);
 
-    const changeRoute = () => {
-        history.goBack();
-    };
+    // const changeRoute = () => {
+    //     history.goBack();
+    // };
 
     return (
         <>
             {showPostModal && (
-                <Modal onClose={() => {setShowPostModal(false); changeRoute()}}>
+                <Modal>
                     <PostShow />
                 </Modal>
             )}

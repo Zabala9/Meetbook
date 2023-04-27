@@ -11,10 +11,7 @@ function Profile(){
 
     return (
         <>
-            <label id="name-user">{sessionUser.name + " " + sessionUser.lastname}</label>
-            <div id="content">
-                <PostIndex user={sessionUser} />
-            </div>
+            
         </>
     );
 };
