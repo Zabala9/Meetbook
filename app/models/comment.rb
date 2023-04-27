@@ -19,4 +19,12 @@ class Comment < ApplicationRecord
     belongs_to :author,
     foreign_key: :author_id,
     class_name: :User
+
+    def self.comment_finder(id)
+        Comment.where('post_id = (?)', id).select(:body, :id)
+    end
+
+    def self.post_comment_finder(id)
+        Comment.where('author_id = (?)', id).select(:body, :id)
+    end
 end

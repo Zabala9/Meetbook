@@ -3,9 +3,9 @@ import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import PostIndex from '../posts/PostIndex';
 import { Redirect } from "react-router-dom";
-import './Navigation.css';
 import { Link, useHistory } from 'react-router-dom';
 import image from '../../assets/logo.jpg';
+import './Navigation.css';
 
 function Navigation() {
     const sessionUser = useSelector(state => state.session.user);

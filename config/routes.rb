@@ -11,9 +11,13 @@ Rails.application.routes.draw do
       resources :posts, only: [:index]
     end
 
+    resources :posts, only: [:show] do
+      resources :comments, only: [:index]
+    end
+
     resource :session, only: [:show, :create, :destroy]
     resources :posts
-    resources :likes, only: [:create, :destroy]
+    resources :comments
   end
 
   get '*path', to: 'static_pages#frontend'

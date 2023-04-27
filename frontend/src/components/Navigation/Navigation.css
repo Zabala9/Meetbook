@@ -47,17 +47,14 @@ img{
 }
 
 .profile-dropdown{
-    position: fixed;
-    left: 2700px;
-    /* margin-left: -2010px; */
+    margin-left: -1800px;
+    /* background-color: greenyellow; */
     margin-top: 65px;
     margin-bottom: 10px;
-    width: 0px;
+    width: 120px;
 }
 
 #elements-profile-dropdown{
-    position: fixed;
-    left: 3110px;
-    /* background-color: green; */
+    /* background-color: blue; */
     width: 100px;
 }
