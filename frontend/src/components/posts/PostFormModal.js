@@ -14,7 +14,7 @@ function PostFormModal(){
     return(
         <>
             {showEditPostModal && (
-                <Modal>
+                <Modal onClose={changeRoute}>
                     <PostForm />
                 </Modal>
             )}

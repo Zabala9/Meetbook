@@ -21,11 +21,11 @@ const PostForm = () => {
     const [content, setContent] = useState('');
     const [authorId, setAuthorId] = useState(currentUserId);
 
-    useEffect(() => {
-        if (post) {
-            setContent(post.content);
-        }
-    }, [post]);
+    // useEffect(() => {
+    //     if(post){
+    //         setContent(post.content);
+    //     }
+    // }, [post]);
 
     useEffect(() => {
         if(postId) dispatch(fetchPost(postId));

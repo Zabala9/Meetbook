@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getPost, fetchPost } from "../../store/posts";
 import { useHistory, Redirect, useParams } from "react-router-dom";
 import PostsButton from "./PostButton";
+// import CommentIndex from "../Comments/CommentIndex";
 import './postShow.css';
 
 const PostShow = () => {
@@ -34,6 +35,9 @@ const PostShow = () => {
                     <label id="post-button"><PostsButton key={post.id} post={post} /></label>
                 </div>
                 <br></br>
+                
+                <br></br>
+                {/* <CommentIndex user={currentUser} /> */}
                 <button onClick={goBack} id="go-back-button" >Go back</button>
             </ul>
         </div>

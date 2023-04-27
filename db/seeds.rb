@@ -39,5 +39,12 @@ ApplicationRecord.transaction do
         author_id: 1
     )
 
+    # puts "Creating Comments..."
+    # Comment.create!(
+    #     content: "I'm down",
+    #     author_id: 2,
+    #     post_id: 
+    # )
+
     puts "Done!"
 end
