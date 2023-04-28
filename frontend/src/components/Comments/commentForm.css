@@ -1,0 +1,20 @@
+#form-comment{
+    margin-left: -1vw;
+    width: 350px;
+}
+
+#text-comment{
+    margin-top: 20px;
+    margin-right: 5px;
+    font-family: cursive;
+    font-size: 20px;
+}
+
+#icon{
+    color: rgb(206, 85, 85);
+}
+
+#button-comment-form{
+    font-size: 22px;
+    width: 30px;
+}
