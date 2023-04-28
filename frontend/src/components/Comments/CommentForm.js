@@ -55,7 +55,7 @@ const CommentForm = () => {
                         required
                     />
                 </label>
-                <button id="button-comment-form"><i class="fa-solid fa-caret-right" id="icon"></i></button>
+                <button id="button-comment-form"><i className="fa-solid fa-caret-right" id="icon"></i></button>
             </form>
             {formType === 'Update comment' ? <button onClick={goBack} id="go-back-button">Go back</button> : ''}
         </>
