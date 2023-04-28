@@ -5,6 +5,8 @@ import { useHistory, Redirect, useParams } from "react-router-dom";
 import PostsButton from "./PostButton";
 import CommentIndex from "../Comments/CommentIndex";
 import './postShow.css';
+import LikeForm from "../Likes/LikeForm";
+import LikeIndex from "../Likes/LikeIndex";
 
 const PostShow = () => {
     const {postId} = useParams();
@@ -37,6 +39,9 @@ const PostShow = () => {
                 <br></br>
                 
                 <br></br>
+                <LikeIndex />
+                <br></br>
+                <LikeForm />
                 <CommentIndex user={currentUser} />
                 <button onClick={goBack} id="go-back-button" >Go back</button>
             </ul>

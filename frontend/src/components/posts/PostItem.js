@@ -3,6 +3,8 @@ import PostsButton from "./PostButton";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import './postIndex.css';
+import LikeIndex from "../Likes/LikeIndex";
+import CommentForm from "../Comments/CommentForm";
 
 const PostItem = ({post}) => {
     const currentUser = useSelector(state => state.session.user);
@@ -16,8 +18,12 @@ const PostItem = ({post}) => {
                     <PostsButton key={post.id} post={post} />
                 </div>
                 <div id="container-likes-comments">
+                    <label><LikeIndex /></label>
                     <Link to={`/${post.id}`} id='link-comments' >comments</Link>
                 </div>
+                {/* <div>
+                    <CommentForm />
+                </div> */}
             </li>
         </div>
     );

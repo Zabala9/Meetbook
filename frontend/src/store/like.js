@@ -27,7 +27,7 @@ export const getLikes = state => {
     return state?.likes ? Object.values(state.likes) : [];
 };
 
-export const fetchComments = () => async(dispatch) => {
+export const fetchLikes = () => async(dispatch) => {
     const res = await csrfFetch(`/api/likes`);
     if(res.ok){
         const likes = await res.json();
@@ -35,8 +35,8 @@ export const fetchComments = () => async(dispatch) => {
     }
 };
 
-export const fetchComment = (commentId) => async(dispatch) => {
-    const res = await csrfFetch(`/api/likes/${commentId}`);
+export const fetchLike = (likeId) => async(dispatch) => {
+    const res = await csrfFetch(`/api/likes/${likeId}`);
     if(res.ok){
         const like = await res.json();
         dispatch(receiveLike(like));
