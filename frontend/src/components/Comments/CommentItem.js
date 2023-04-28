@@ -1,6 +1,7 @@
 import React from "react";
 import CommentButton from "./CommentButton";
 import { useSelector } from "react-redux";
+import './commentIndex.css';
 
 const CommentItem = ({comment}) => {
     const currentUser = useSelector(state => state.session.user);

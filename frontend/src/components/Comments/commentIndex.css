@@ -1,0 +1,38 @@
+#owner-comment{
+    font-family: cursive;
+    font-size: 20px;
+    margin-left: 5px;
+    color: rgb(206, 85, 85);
+}
+
+#comment-content{
+    font-family: cursive;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+#comment-li{
+    margin-left: -2vw;
+    width: 350px;
+    border-bottom: 2px solid black;
+}
+
+#open-menu{
+    margin-top: -1vw;
+}
+
+#open-menu:hover{
+    background-color: rgb(127, 123, 123);
+}
+
+#comment-dropdown{
+    width: 150px;
+    /* background-color: greenyellow; */
+    margin-left: -9vw;
+}
+
+#edit-comment-button, #remove-comment-button{
+    font-family: cursive;
+    font-size: 17px;
+    margin-bottom: 5px;
+}

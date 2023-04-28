@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-evenly;
     width: 400px;
+    border-bottom: 2px solid black;
 }
 
 #content{
@@ -25,5 +26,6 @@
     font-family: cursive;
     border: 1px solid black;
     border-radius: 10px;
+    margin-top: 25px;
     margin-bottom: 15px;
 }

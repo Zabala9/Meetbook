@@ -10,6 +10,9 @@ const PostIndex = () => {
     let posts = useSelector(getPosts);
     const history = useHistory();
     const currentUser = useSelector(state => state.session.user);
+    // let path = history.location.pathname;
+    // let currentPostId = path.slice(1);
+    // let currentPostIdInt = parseInt(currentPostId);
 
     if(history.location.pathname === '/profile'){
         posts = posts.filter((post) => post.authorId === currentUser.id)

@@ -9,7 +9,7 @@ const CommentForm = () => {
     let history = useHistory();
     const dispatch = useDispatch();
     let path = history.location.pathname;
-    let currentPostId = path.slice(1);
+    let currentPostId = path.slice(1,3);
     // console.log(currentPostId);
     const currentUserId = useSelector(state => state.session.user.id);
     const formType = commentId ? 'Update comment' : 'Create comment';

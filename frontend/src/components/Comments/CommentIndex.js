@@ -4,6 +4,7 @@ import { getComments, fetchComments } from "../../store/comment";
 import { useHistory, Redirect } from "react-router-dom";
 import CommentItem from "./CommentItem";
 import CommentForm from "./CommentForm";
+import './commentIndex.css';
 
 const CommentIndex = () => {
     const dispatch = useDispatch();
