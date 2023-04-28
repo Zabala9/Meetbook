@@ -49,7 +49,7 @@ function ProfileButton(){
                             <button onClick={changeRoute} id="profile-button" >Profile</button>
                         </li>
                         <li>
-                            <button onClick={logout} id="logout-button" ><i class="fa-solid fa-person-through-window"></i> Log out</button>
+                            <button onClick={logout} id="logout-button" ><i className="fa-solid fa-person-through-window"></i> Log out</button>
                         </li>
                     </div>
                 </ul>

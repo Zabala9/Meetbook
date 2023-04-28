@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getPost, fetchPost } from "../../store/posts";
 import { useHistory, Redirect, useParams } from "react-router-dom";
@@ -18,7 +18,7 @@ const PostShow = () => {
     }, [dispatch, postId]);
 
     const goBack = () => {
-        history.go(-1);
+        history.goBack();
     };
 
     if(!currentUser) return <Redirect to={'/'} />
