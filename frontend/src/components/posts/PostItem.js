@@ -18,7 +18,7 @@ const PostItem = ({post}) => {
                     <PostsButton key={post.id} post={post} />
                 </div>
                 <div id="container-likes-comments">
-                    <label><LikeIndex /></label>
+                    {/* <label><LikeIndex /></label> */}
                     <Link to={`/${post.id}`} id='link-comments' >comments</Link>
                 </div>
                 {/* <div>

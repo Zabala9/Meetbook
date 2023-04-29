@@ -5,8 +5,10 @@ class Api::LikesController < ApplicationController
     end
 
     def create
+        @prev_like = Like.find_by(post_id: like_params[:post_id])
         @like = Like.new(like_params)
-        if @like&.save
+        if @prev_like == nil || (@prev_like.post_id != @like.post_id && @prev_like.author_id != @like.post_id)
+            @like&.save
             render :show
         else
             render json: {error: @like.errors.full_messages}, 
@@ -25,8 +27,10 @@ class Api::LikesController < ApplicationController
     end
 
     def destroy
+        # @prev_like = Like.find_by(post_id: like_params[:post_id])
         @like = Like.find_by(id: params[:id])
-        if @like&.destroy
+        # debugger
+        if @prev_like&.destroy
             head :no_content
         end
     end
