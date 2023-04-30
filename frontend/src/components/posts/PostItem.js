@@ -19,7 +19,6 @@ const PostItem = ({post}) => {
 
     let nameOwnerPost;
     if(post.authorId in allUsers){
-        // console.log(allUsers[post.authorId].name, 'done');
         let name = allUsers[post.authorId].name;
         let lastName = allUsers[post.authorId].lastname;
         nameOwnerPost = name + ' ' + lastName;

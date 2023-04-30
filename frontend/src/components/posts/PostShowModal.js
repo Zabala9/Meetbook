@@ -11,8 +11,6 @@ function PostShowModal(){
         history.goBack();
     };
 
-    console.log(history);
-
     return (
         <>
             {showPostModal && (
