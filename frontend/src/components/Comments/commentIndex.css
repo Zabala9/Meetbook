@@ -27,7 +27,6 @@
 
 #comment-dropdown{
     width: 150px;
-    /* background-color: greenyellow; */
     margin-left: -9vw;
 }
 
@@ -35,4 +34,8 @@
     font-family: cursive;
     font-size: 17px;
     margin-bottom: 5px;
+}
+
+#all-comments{
+    margin-top: 1vw;
 }
