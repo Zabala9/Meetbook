@@ -22,7 +22,7 @@ const PostItem = ({post}) => {
         // console.log(allUsers[post.authorId].name, 'done');
         let name = allUsers[post.authorId].name;
         let lastName = allUsers[post.authorId].lastname;
-        nameOwnerPost = name + lastName;
+        nameOwnerPost = name + ' ' + lastName;
     }
 
     return(
