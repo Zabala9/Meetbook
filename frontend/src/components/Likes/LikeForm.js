@@ -34,13 +34,17 @@ const LikeForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         like = {...like, postId, authorId};
-        values.forEach((value) => {
-            if(value.authorId === currentUserId){
-                dispatch(deleteLike(value.id))
-            } else {
-                dispatch(createLike(like));
-            }
-        });
+        if(values.length === 0){
+            dispatch(createLike(like));
+        }else {
+            values.forEach((value) => {
+                if(value.authorId === currentUserId){
+                    dispatch(deleteLike(value.id))
+                } else {
+                    dispatch(createLike(like));
+                }
+            });
+        }
     };
 
     return(

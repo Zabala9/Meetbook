@@ -18,16 +18,17 @@ const LikeIndex = () => {
     }, [dispatch]);
 
     likes = likes.filter((like) => like.postId === currentPostIdInt);
-    // let finalLikes = likes;
 
     let countLikes = 0;
     likes.forEach((like) => {
         countLikes += 1;
     });
 
+    //to={`/${currentPostId}/likes`}
+
     return(
         <>
-            <Link to={`/${currentPostId}/likes`} id="counter-likes">{countLikes === 0 ? '' : countLikes}</Link>
+            <Link  id="counter-likes">{countLikes === 0 ? '' : countLikes}</Link>
             <br></br>
             <LikeForm />
         </>

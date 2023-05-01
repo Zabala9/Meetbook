@@ -5,10 +5,8 @@ class Api::LikesController < ApplicationController
     end
 
     def create
-        @prev_like = Like.find_by(post_id: like_params[:post_id])
         @like = Like.new(like_params)
-        # debugger
-        if @like && @like.save
+        if @like&.save
             render :show
         else
             render json: {errors: @like.errors.full_messages}, 

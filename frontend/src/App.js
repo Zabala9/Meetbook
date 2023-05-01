@@ -7,11 +7,8 @@ import Navigation from "./components/Navigation";
 import Profile from "./components/Profile";
 import PostShowModal from "./components/posts/PostShowModal";
 import CommentFormModal from "./components/Comments/CommentFormModal";
-import CommentForm from "./components/Comments/CommentForm";
-import PostShow from "./components/posts/PostShow";
 
 function App() {
-  const sessionUser = useSelector(state => state.session.user);
 
   return (
     <>
@@ -28,7 +25,6 @@ function App() {
         </Route>
         <Route exact path='/:postId'>
           <PostShowModal />
-          {/* <PostShow /> */}
         </Route>
         <Route exact path='/:postId/comment/:commentId/edit'>
           <PostShowModal />
