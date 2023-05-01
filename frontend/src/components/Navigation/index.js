@@ -30,6 +30,7 @@ function Navigation() {
                         <Link id="link-main" to={'/'} onClick={changeRoute} ><img src={image} width={'90px'} height={'85px'} ></img></Link>
                         <SearchUser />
                     </div>
+                    {/* <button id='button-games'><i className="fa-solid fa-gamepad" id='icon-button-games'></i></button> */}
                     <ProfileButton user={sessionUser} />
                 </div>
                 <PostIndex user={sessionUser} />
@@ -38,7 +39,11 @@ function Navigation() {
         profileLinks = (
             <>
                 <div id='user-options' >
-                    <Link id="link-main" to={'/'} onClick={changeRoute} ><img src={image} width={'90px'} height={'85px'} ></img></Link>
+                    <div id='container-search-main'>
+                        <Link id="link-main" to={'/'} onClick={changeRoute} ><img src={image} width={'90px'} height={'85px'} ></img></Link>
+                        <SearchUser />
+                    </div>
+                    {/* <button id='button-games'><i className="fa-solid fa-gamepad" id='icon-button-games'></i></button> */}
                     <ProfileButton user={sessionUser} />
                 </div>
                 <label id="name-user">{sessionUser.name + " " + sessionUser.lastname}</label>

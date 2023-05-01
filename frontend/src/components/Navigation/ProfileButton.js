@@ -45,10 +45,10 @@ function ProfileButton(){
             { showMenu && (
                 <ul className="profile-dropdown" >
                     <div id="elements-profile-dropdown">
-                        <li>
+                        <li id="li-button">
                             <button onClick={changeRoute} id="profile-button" >Profile</button>
                         </li>
-                        <li>
+                        <li id="li-button">
                             <button onClick={logout} id="logout-button" ><i className="fa-solid fa-person-through-window"></i> Log out</button>
                         </li>
                     </div>
