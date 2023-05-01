@@ -12,10 +12,12 @@ const LikeShow = () => {
         dispatch(fetchLikes);
     }, [dispatch]);
 
+    
+
     return(
         <>
             <ul id="users-likes-post">
-                
+
             </ul>
         </>
     );

@@ -33,7 +33,6 @@ const PostItem = ({post}) => {
                     <PostsButton key={post.id} post={post} />
                 </div>
                 <div id="container-likes-comments">
-                    
                     <Link to={`/${post.id}`} id='link-comments' >comments</Link>
                 </div>
                 {/* <div>
