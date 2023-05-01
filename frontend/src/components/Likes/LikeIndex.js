@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getLikes, fetchLikes } from "../../store/like";
 import { useHistory } from "react-router-dom";
+import LikeForm from "./LikeForm";
+import './like.css';
 
 const LikeIndex = () => {
     const dispatch = useDispatch();
@@ -24,7 +26,11 @@ const LikeIndex = () => {
     });
 
     return(
-        <label id="counter-likes">{countLikes === 0 ? '' : countLikes}</label>
+        <>
+            <label id="counter-likes">{countLikes === 0 ? '' : countLikes}</label>
+            <br></br>
+            <LikeForm />
+        </>
     );
 };
 

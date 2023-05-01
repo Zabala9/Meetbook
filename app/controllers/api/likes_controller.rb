@@ -7,11 +7,11 @@ class Api::LikesController < ApplicationController
     def create
         @prev_like = Like.find_by(post_id: like_params[:post_id])
         @like = Like.new(like_params)
-        if @prev_like == nil || (@prev_like.post_id != @like.post_id && @prev_like.author_id != @like.post_id)
-            @like&.save
+        # debugger
+        if @like && @like.save
             render :show
         else
-            render json: {error: @like.errors.full_messages}, 
+            render json: {errors: @like.errors.full_messages}, 
                 status: :unprocessable_entity
         end
     end
@@ -22,15 +22,13 @@ class Api::LikesController < ApplicationController
             render :show
         else
             render json: {errors: @like.errors.full_messages}, 
-                state: :unprocessable_entity
+                status: :unprocessable_entity
         end
     end
 
     def destroy
-        # @prev_like = Like.find_by(post_id: like_params[:post_id])
         @like = Like.find_by(id: params[:id])
-        # debugger
-        if @prev_like&.destroy
+        if @like&.destroy
             head :no_content
         end
     end

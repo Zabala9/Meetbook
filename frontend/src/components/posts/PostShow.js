@@ -1,11 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getPost, fetchPost } from "../../store/posts";
 import { useHistory, Redirect, useParams } from "react-router-dom";
 import PostsButton from "./PostButton";
 import CommentIndex from "../Comments/CommentIndex";
 import './postShow.css';
-import LikeForm from "../Likes/LikeForm";
 import LikeIndex from "../Likes/LikeIndex";
 
 const PostShow = () => {
@@ -39,9 +38,8 @@ const PostShow = () => {
                 <br></br>
                 
                 <br></br>
-                <LikeIndex />
+                <LikeIndex user={currentUser} />
                 <br></br>
-                <LikeForm />
                 <CommentIndex user={currentUser} />
                 <button onClick={goBack} id="go-back-button" >Go back</button>
             </ul>
