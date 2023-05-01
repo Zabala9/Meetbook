@@ -9,7 +9,7 @@ const LikeForm = () => {
     let history = useHistory();
     const dispatch = useDispatch();
     let path = history.location.pathname;
-    let currentPostId = path.slice(1,3);
+    let currentPostId = path.slice(1);
 
     const likes = useSelector(state => state.likes);
     const values = Object.values(likes);
