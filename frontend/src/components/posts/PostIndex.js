@@ -15,6 +15,11 @@ const PostIndex = () => {
         posts = posts.filter((post) => post.authorId === currentUser.id)
     };
 
+    // const changePath = () => {
+    //     let path = '/profile';
+    //     history.push(path);
+    // };
+
     useEffect(() => {
         dispatch(fetchPosts());
     }, [dispatch]);
@@ -24,12 +29,14 @@ const PostIndex = () => {
     return(
         <>
             <ul id='elements-post-index'>
-                <PostForm />
-                {
-                    posts.map(post =>
-                        <PostItem key={`post${post.id}`} post={post} />
-                    )
-                }
+                <div>
+                    <PostForm />
+                    {
+                        posts.map(post =>
+                            <PostItem key={`post${post.id}`} post={post} />
+                        )
+                    }
+                </div>
             </ul>
         </>
     );

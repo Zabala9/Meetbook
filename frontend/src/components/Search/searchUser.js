@@ -1,11 +1,11 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getUsers, fetchUsers } from "../../store/user";
 import './searchUser.css';
 
 const SearchUser = () => {
     const dispatch = useDispatch();
-    // const allUsers = useSelector(state => state.users);
+    const allUsers = useSelector(state => state.users);
 
     useEffect(() => {
         dispatch(fetchUsers());
@@ -17,6 +17,7 @@ const SearchUser = () => {
                 <label>
                     <i className="fa-solid fa-magnifying-glass" id="icon-search"></i>
                     <input placeholder="search Meetbook" id="search-input"
+
                     />
                 </label>
             </form>

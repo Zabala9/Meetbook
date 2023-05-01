@@ -59,11 +59,9 @@ function Navigation() {
     }
 
     return(
-        <ul>
-            <li>
-                {renderLinks}
-            </li>
-        </ul>
+        <li id='li-index-navigation'>
+            {renderLinks}
+        </li>
     );
 };
 
