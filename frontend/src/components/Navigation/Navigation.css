@@ -65,6 +65,7 @@ li{
 #link-main{
     margin: 10px;
     margin-top: 15px;
+    margin-right: 50px;
 }
 
 img{
@@ -83,4 +84,8 @@ img{
 #elements-profile-dropdown{
     width: 100px;
     /* margin-left: -90px; */
+}
+
+#container-search-main{
+    display: flex;
 }

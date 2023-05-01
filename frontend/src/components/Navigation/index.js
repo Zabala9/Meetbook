@@ -4,6 +4,7 @@ import ProfileButton from './ProfileButton';
 import PostIndex from '../posts/PostIndex';
 import { Redirect } from "react-router-dom";
 import { Link, useHistory } from 'react-router-dom';
+import SearchUser from '../Search/searchUser';
 import image from '../../assets/logo.jpg';
 import './Navigation.css';
 
@@ -25,7 +26,10 @@ function Navigation() {
         sessionLinks = (
             <>
                 <div id='user-options' >
-                    <Link id="link-main" to={'/'} onClick={changeRoute} ><img src={image} width={'90px'} height={'85px'} ></img></Link>
+                    <div id='container-search-main'>
+                        <Link id="link-main" to={'/'} onClick={changeRoute} ><img src={image} width={'90px'} height={'85px'} ></img></Link>
+                        <SearchUser />
+                    </div>
                     <ProfileButton user={sessionUser} />
                 </div>
                 <PostIndex user={sessionUser} />
