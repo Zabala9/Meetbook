@@ -6,10 +6,11 @@ import './commentForm.css';
 
 const CommentForm = () => {
     const {commentId} = useParams();
+    const {postId} = useParams();
     let history = useHistory();
     const dispatch = useDispatch();
-    let path = history.location.pathname;
-    let currentPostId = path.slice(1,3);
+    // let path = history.location.pathname;
+    // let currentPostId = path.slice(1,3);
     // console.log(currentPostId);
     const currentUserId = useSelector(state => state.session.user.id);
     const formType = commentId ? 'Update comment' : 'Create comment';
@@ -18,13 +19,13 @@ const CommentForm = () => {
         comment = {
             content: '',
             authorId: currentUserId,
-            postId: currentPostId
+            postId: postId
         }
     }
 
     const [content, setContent] = useState('');
     const [authorId, setAuthorId] = useState(currentUserId);
-    const [postId, setPostId] = useState(currentPostId);
+    const [currentPostId, setCurrentPostId] = useState(postId);
 
     // useEffect(() => {
     //     if(comment) setContent(comment.content);
@@ -40,7 +41,7 @@ const CommentForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        comment = {...comment, content, authorId, postId};
+        comment = {...comment, content, authorId, currentPostId};
         formType === 'Create comment' ? dispatch(createComment(comment)) :
             dispatch(updateComment(comment));
     };
@@ -50,8 +51,8 @@ const CommentForm = () => {
             <form onSubmit={handleSubmit} id="form-comment">
                 <label>
                     <input type="text" value={content} id="text-comment"
-                        onChange={(e) => setContent(e.target.value)}
                         placeholder="Write a comment..."
+                        onChange={(e) => setContent(e.target.value)}
                         required
                     />
                 </label>
