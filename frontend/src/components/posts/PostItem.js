@@ -4,8 +4,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { getUsers, fetchUsers } from '../../store/user.js';
 import './postIndex.css';
-// import LikeIndex from "../Likes/LikeIndex";
-// import CommentForm from "../Comments/CommentForm";
 
 const PostItem = ({post}) => {
     let users = useSelector(getUsers);
@@ -35,9 +33,6 @@ const PostItem = ({post}) => {
                 <div id="container-likes-comments">
                     <Link to={`/${post.id}`} id='link-comments' >comments</Link>
                 </div>
-                {/* <div>
-                    <CommentForm />
-                </div> */}
             </li>
         </div>
     );
