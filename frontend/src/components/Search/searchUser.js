@@ -12,7 +12,6 @@ const SearchUser = () => {
         dispatch(fetchUsers());
     }, [dispatch]);
 
-    // const [showList, setShowList] = useState(false);
     const arr = [];
     const [valueSearch, setValueSearch] = useState("");
     allUsers.forEach((user) => {
@@ -20,7 +19,15 @@ const SearchUser = () => {
             arr.push([user.name + ' ' + user.lastname]);
         }
     });
-    console.log(arr);
+
+    // console.log(arr[0][0]);
+    // let newName;
+    // if(valueSearch.length > 0){
+    //     arr.forEach((name, idx) => {
+    //         newName = name[0].split(' ').join('');
+    //         arr[idx] = newName;
+    //     })
+    // }
 
     return(
         <>
@@ -30,9 +37,13 @@ const SearchUser = () => {
                     onChange={(e) => setValueSearch(e.target.value)}
                 />
                 <div id="list-names">
-                    {valueSearch.length > 0 && (
-                        <li>{arr}</li>
-                    )}
+                    {
+                        valueSearch.length > 0 ? arr.map((name) =>
+                            <div>
+                                <li><button id="button-name-search">{name}</button></li>
+                            </div>
+                        ) : ''
+                    }
                     {/* {valueSearch.length > 0 && 
                         arr.forEach((name) => {
                             <li>{name}</li>
