@@ -1,12 +1,14 @@
 import React, {useEffect, useState} from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { getUsers, fetchUsers } from "../../store/user";
 import './searchUser.css';
-import SearchShow from "./searchShow";
+import SearchUserShow from "./searchUserShow";
 
 const SearchUser = () => {
     const dispatch = useDispatch();
     let allUsers = useSelector(getUsers);
+    let history = useHistory();
 
     useEffect(() => {
         dispatch(fetchUsers());
@@ -17,17 +19,13 @@ const SearchUser = () => {
     allUsers.forEach((user) => {
         if(user.name.toLowerCase().includes(valueSearch)){
             arr.push([user.name + ' ' + user.lastname]);
-        }
+        } else if(user.lastname.toLowerCase().includes(valueSearch)){
+            arr.push([user.name + ' ' + user.lastname]);
+        };
     });
 
     // console.log(arr[0][0]);
-    // let newName;
-    // if(valueSearch.length > 0){
-    //     arr.forEach((name, idx) => {
-    //         newName = name[0].split(' ').join('');
-    //         arr[idx] = newName;
-    //     })
-    // }
+    
 
     return(
         <>
@@ -39,9 +37,7 @@ const SearchUser = () => {
                 <div id="list-names">
                     {
                         valueSearch.length > 0 ? arr.map((name) =>
-                            <div>
-                                <li><button id="button-name-search">{name}</button></li>
-                            </div>
+                            <SearchUserShow name={name} />
                         ) : ''
                     }
                     {/* {valueSearch.length > 0 && 
