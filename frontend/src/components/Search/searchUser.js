@@ -2,13 +2,15 @@ import React, {useEffect, useState} from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { getUsers, fetchUsers } from "../../store/user";
+import ProfileVisited from "./profileVisited";
+import SearchUserShow from "./searchUserItem";
 import './searchUser.css';
-import SearchUserShow from "./searchUserShow";
 
 const SearchUser = () => {
     const dispatch = useDispatch();
     let allUsers = useSelector(getUsers);
     let history = useHistory();
+
 
     useEffect(() => {
         dispatch(fetchUsers());
@@ -18,14 +20,11 @@ const SearchUser = () => {
     const [valueSearch, setValueSearch] = useState("");
     allUsers.forEach((user) => {
         if(user.name.toLowerCase().includes(valueSearch)){
-            arr.push([user.name + ' ' + user.lastname]);
+            arr.push([user.name + ' ' + user.lastname, user.id]);
         } else if(user.lastname.toLowerCase().includes(valueSearch)){
-            arr.push([user.name + ' ' + user.lastname]);
+            arr.push([user.name + ' ' + user.lastname, user.id]);
         };
     });
-
-    // console.log(arr[0][0]);
-    
 
     return(
         <>
@@ -37,14 +36,19 @@ const SearchUser = () => {
                 <div id="list-names">
                     {
                         valueSearch.length > 0 ? arr.map((name) =>
-                            <SearchUserShow name={name} />
+                            // <li>
+                            //     <button onClick={() => {
+                            //         let newPath = name[0].split(' ').join('');
+                            //         history.push(newPath);
+                            //         window.location.reload(false);
+                            //         // <ProfileVisited path={newPath} />
+                                    
+                            //     }}>{name}</button>
+                            // </li>
+                            // console.log(name[1])
+                            <SearchUserShow id={name[1]} name={name[0]} />
                         ) : ''
                     }
-                    {/* {valueSearch.length > 0 && 
-                        arr.forEach((name) => {
-                            <li>{name}</li>
-                        })
-                    } */}
                 </div>
             </div>
         </>

@@ -7,6 +7,7 @@ import { Link, useHistory } from 'react-router-dom';
 import SearchUser from '../Search/searchUser';
 import image from '../../assets/logo.jpg';
 import './Navigation.css';
+import ProfileVisited from '../Search/profileVisited';
 
 function Navigation() {
     const sessionUser = useSelector(state => state.session.user);
@@ -59,6 +60,8 @@ function Navigation() {
         renderLinks = profileLinks;
     } else if(history.location.pathname === '/'){
         renderLinks = sessionLinks;
+    } else if(history.location.pathname === '/test'){
+        renderLinks = <ProfileVisited />
     } else {
         renderLinks = sessionLinks;
     }

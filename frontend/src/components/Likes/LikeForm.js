@@ -10,9 +10,11 @@ const LikeForm = () => {
     const dispatch = useDispatch();
     let path = history.location.pathname;
     let currentPostId = path.slice(1);
+    const currentPostIdInt = parseInt(currentPostId);
 
     const likes = useSelector(state => state.likes);
     const values = Object.values(likes);
+    console.log(values);
     
     const currentUserId = useSelector(state => state.session.user.id);
     let formType = likeId ? 'Delete like' : 'Create like';
@@ -36,9 +38,9 @@ const LikeForm = () => {
         like = {...like, postId, authorId};
         if(values.length === 0){
             dispatch(createLike(like));
-        }else {
+        } else {
             values.forEach((value) => {
-                if(value.authorId === currentUserId){
+                if(value.authorId === currentUserId && currentPostIdInt === value.postId){
                     dispatch(deleteLike(value.id))
                 } else {
                     dispatch(createLike(like));
