@@ -20,7 +20,7 @@ class Api::PostsController < ApplicationController
         if @post
             render :show
         else
-            render json: {errors: @post.errors.full_messages},
+            render json: {errors: ['Post not found.']},
                 status: :unprocessable_entity
         end
     end

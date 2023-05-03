@@ -63,8 +63,8 @@ function Navigation() {
     } else if(history.location.pathname === '/'){
         renderLinks = sessionLinks;
     } else if(pathNumber.slice(1) in numbers){
+        console.log(pathNumber);
         renderLinks = <ProfileVisited />
-        // window.location.reload(false);
     } else {
         renderLinks = sessionLinks;
     }

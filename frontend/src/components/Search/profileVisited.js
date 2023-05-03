@@ -38,7 +38,6 @@ const ProfileVisited = () => {
 
     let links;
     if(currentUser){
-        console.log(users[pathCheckInt]);
         links = (
             <>
                 <div id='user-options' >

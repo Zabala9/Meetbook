@@ -52,7 +52,11 @@ const LikeForm = () => {
 
     return(
         <>
-            <button onClick={handleSubmit} id="button-like-form"><i className="fa-solid fa-thumbs-up" id="icon-like" ><label id="like-label">Like</label> </i></button>
+            <button onClick={handleSubmit} id="button-like-form">
+                <i className="fa-solid fa-thumbs-up" id="icon-like" >
+                    <label id="like-label">Like</label>
+                </i>
+            </button>
         </>
     );
 };

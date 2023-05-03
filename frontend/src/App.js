@@ -1,5 +1,6 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, useHistory } from "react-router-dom";
+import { useSelector } from "react-redux";
 import LoginFormPage from "./components/LoginFormPage";
 import PostFormModal from "./components/posts/PostFormModal";
 import Navigation from "./components/Navigation";
@@ -7,9 +8,19 @@ import Profile from "./components/Profile";
 import PostShowModal from "./components/posts/PostShowModal";
 import CommentFormModal from "./components/Comments/CommentFormModal";
 import ProfileVisited from "./components/Search/profileVisited";
-
+import numbers from "./components/Navigation/numbers";
 
 function App() {
+  const history = useHistory();
+  let pathNumber = history.location.pathname;
+
+  let newPathNumber;
+  if(pathNumber.slice(1) in numbers){
+    newPathNumber = pathNumber
+    console.log(newPathNumber);
+  }
+  // const currentUser = useSelector(state => state.session.user);
+  // const userName = currentUser.name + currentUser.lastname;
   return (
     <>
       <Navigation />
@@ -30,9 +41,9 @@ function App() {
           <PostShowModal />
           <CommentFormModal />
         </Route>
-        {/* <Route exact path={newPathNumber}>
+        <Route exact path={newPathNumber}>
           <ProfileVisited />
-        </Route> */}
+        </Route>
       </Switch>
     </>
   );
