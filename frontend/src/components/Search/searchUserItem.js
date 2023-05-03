@@ -1,5 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import './searchUser.css';
 
 const SearchUserShow = ({id, name}) => {
     const history = useHistory();
@@ -16,7 +17,7 @@ const SearchUserShow = ({id, name}) => {
 
     return(
         <li>
-            <button onClick={changeRoute}>{name}</button>
+            <button onClick={changeRoute} id="button-name-search">{name}</button>
         </li>
     )
 };

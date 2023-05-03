@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import * as sessionActions from '../../store/session';
 import { useHistory } from "react-router-dom";
 import './Navigation.css';
+import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 
 function ProfileButton(){
     const dispatch = useDispatch();
@@ -12,6 +13,7 @@ function ProfileButton(){
     // console.log(userName);
 
     const changeRoute = () => {
+        // <Redirect to={'/profile'} />
         let path = '/profile'
         history.push(path);
         window.location.reload(false);
