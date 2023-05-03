@@ -5,7 +5,7 @@ import { useHistory, Redirect, Link } from "react-router-dom";
 import SearchUser from "./searchUser";
 import image from '../../assets/logo.jpg';
 import ProfileButton from "../Navigation/ProfileButton";
-// import { Link } from "react-router-dom";
+import './searchUser.css';
 
 const ProfileVisited = () => {
     const dispatch = useDispatch();
@@ -15,6 +15,7 @@ const ProfileVisited = () => {
     const users = useSelector(state => state.users);
     const path = window.location.pathname;
     const pathCheck = path.slice(1);
+    const pathCheckInt = parseInt(pathCheck);
 
     const changeRoute = () => {
         let newPath = '/';
@@ -27,14 +28,17 @@ const ProfileVisited = () => {
     }, [dispatch]);
 
     if(!currentUser) return <Redirect to={'/'} />
+    if(currentUser.id === pathCheckInt){
+        let path = '/profile';
+        history.push(path);
+        window.location.reload(false);
+    }
 
-    console.log(users);
-    // for(pathCheck; users.length){
-
-    // }
+    posts = posts.filter((post) => post.authorId === pathCheckInt);
 
     let links;
     if(currentUser){
+        console.log(users[pathCheckInt]);
         links = (
             <>
                 <div id='user-options' >
@@ -45,9 +49,15 @@ const ProfileVisited = () => {
                     {/* <button id='button-games'><i className="fa-solid fa-gamepad" id='icon-button-games'></i></button> */}
                     <ProfileButton user={currentUser} />
                 </div>
-                <label id="name-user-visited"> here</label>
+                <label id="name-user-visited">{}</label>
                 <div id="content-profile-visited">
-
+                    {
+                        posts.map((post) =>
+                            <>
+                                <label id="content-profile">{post.content}</label>
+                            </>
+                        )
+                    }
                 </div>
             </>
         );

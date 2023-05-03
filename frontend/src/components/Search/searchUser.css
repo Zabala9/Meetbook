@@ -11,3 +11,20 @@
     font-size: 30px;
     width: 350px;
 }
+
+#content-profile-visited{
+    border-radius: 10px;
+    background-color: white;
+    width: 650px;
+    margin-left: 35%;
+}
+
+#content-profile{
+    margin-top: -10px;
+    margin-bottom: 10px;
+    font-size: 25px;
+    font-family: cursive;
+    /* margin-left: 25%; */
+    display: flex;
+    justify-content: center;
+}

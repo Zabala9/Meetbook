@@ -8,6 +8,7 @@ import SearchUser from '../Search/searchUser';
 import image from '../../assets/logo.jpg';
 import './Navigation.css';
 import ProfileVisited from '../Search/profileVisited';
+import numbers from './numbers';
 
 function Navigation() {
     const sessionUser = useSelector(state => state.session.user);
@@ -55,13 +56,15 @@ function Navigation() {
         )
     };
 
+    let pathNumber = history.location.pathname;
     let renderLinks;
     if(history.location.pathname === '/profile'){
         renderLinks = profileLinks;
     } else if(history.location.pathname === '/'){
         renderLinks = sessionLinks;
-    } else if(history.location.pathname === '/test'){
+    } else if(pathNumber.slice(1) in numbers){
         renderLinks = <ProfileVisited />
+        // window.location.reload(false);
     } else {
         renderLinks = sessionLinks;
     }
