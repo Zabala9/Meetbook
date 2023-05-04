@@ -90,6 +90,14 @@ function Navigation() {
 
     let pathProfileVisited = history.location.pathname;
     let newPath = pathProfileVisited.split('/');
+    let finalPath;
+    if(newPath[1] in users){
+        let nameInPath = users[newPath[1]].name + users[newPath[1]].lastname;
+        finalPath = '/' + newPath[1] + '/' + nameInPath;
+        // console.log(finalPath);
+    }
+
+
     let renderLinks;
     if(history.location.pathname === '/profile'){
         renderLinks = profileLinks;
@@ -97,7 +105,7 @@ function Navigation() {
         renderLinks = sessionLinks;
     } else if(history.location.pathname === '/games'){
         renderLinks = gameLinks;
-    } else if(newPath[1] in numbers){
+    } else if(history.location.pathname === finalPath){
         renderLinks = <ProfileVisited />
     } else {
         renderLinks = sessionLinks;
