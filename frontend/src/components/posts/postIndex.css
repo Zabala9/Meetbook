@@ -79,6 +79,17 @@ ul{
     padding-left: 15px;
 }
 
+#container-img{
+    display: flex;
+    justify-content: center;
+}
+
+#img-post{
+    margin-top: 10px;
+    width: 350px;
+    height: 250px;
+}
+
 #container-likes-comments{
     display: flex;
     justify-content: center;

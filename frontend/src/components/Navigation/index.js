@@ -29,7 +29,7 @@ function Navigation() {
             <>
                 <div id='user-options' >
                     <div id='container-search-main'>
-                        <Link id="link-main" to={'/'} onClick={changeRoute} ><img src={image} width={'90px'} height={'85px'} ></img></Link>
+                        <Link id="link-main" to={'/'} onClick={changeRoute} ><img src={image} width={'90px'} height={'85px'} id='img-bar' ></img></Link>
                         <SearchUser />
                     </div>
                     {/* <button id='button-games'><i className="fa-solid fa-gamepad" id='icon-button-games'></i></button> */}
@@ -42,7 +42,7 @@ function Navigation() {
             <>
                 <div id='user-options' >
                     <div id='container-search-main'>
-                        <Link id="link-main" to={'/'} onClick={changeRoute} ><img src={image} width={'90px'} height={'85px'} ></img></Link>
+                        <Link id="link-main" to={'/'} onClick={changeRoute} ><img src={image} width={'90px'} height={'85px'} id='img-bar' ></img></Link>
                         <SearchUser />
                     </div>
                     {/* <button id='button-games'><i className="fa-solid fa-gamepad" id='icon-button-games'></i></button> */}

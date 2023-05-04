@@ -15,11 +15,6 @@ const PostIndex = () => {
         posts = posts.filter((post) => post.authorId === currentUser.id)
     };
 
-    // const changePath = () => {
-    //     let path = '/profile';
-    //     history.push(path);
-    // };
-
     useEffect(() => {
         dispatch(fetchPosts());
     }, [dispatch]);

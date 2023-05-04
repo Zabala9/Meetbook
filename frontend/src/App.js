@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Route, Switch, useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import LoginFormPage from "./components/LoginFormPage";
@@ -11,16 +11,9 @@ import ProfileVisited from "./components/Search/profileVisited";
 import numbers from "./components/Navigation/numbers";
 
 function App() {
-  const history = useHistory();
-  let pathNumber = history.location.pathname;
-
-  let newPathNumber;
-  if(pathNumber.slice(1) in numbers){
-    newPathNumber = pathNumber
-    console.log(newPathNumber);
-  }
-  // const currentUser = useSelector(state => state.session.user);
-  // const userName = currentUser.name + currentUser.lastname;
+  // useEffect(() => {
+    
+  // }, [])
   return (
     <>
       <Navigation />
@@ -41,9 +34,9 @@ function App() {
           <PostShowModal />
           <CommentFormModal />
         </Route>
-        <Route exact path={newPathNumber}>
+        {/* <Route exact path={newPathNumber}>
           <ProfileVisited />
-        </Route>
+        </Route> */}
       </Switch>
     </>
   );
