@@ -20,6 +20,12 @@ function Navigation() {
         window.location.reload(false);
     }
 
+    const redirecting = () => {
+        let newPath = '/games';
+        history.push(newPath);
+        window.location.reload(false);
+    };
+
     if(!sessionUser) return <Redirect to={'/'} />
 
     let sessionLinks;
@@ -32,10 +38,20 @@ function Navigation() {
                         <Link id="link-main" to={'/'} onClick={changeRoute} ><img src={image} width={'90px'} height={'85px'} id='img-bar' ></img></Link>
                         <SearchUser />
                     </div>
-                    <button id='button-games'><i className="fa-solid fa-gamepad" id='icon-button-games'></i></button>
+                    <button onClick={redirecting} id='button-games'><i className="fa-solid fa-gamepad" id='icon-button-games'></i></button>
                     <ProfileButton user={sessionUser} />
                 </div>
-                <PostIndex user={sessionUser} />
+                {/* <div id='container-session-links'>
+                    <div id='conteiner-button-name'>
+                        <Link onClick={redirecting} type='submit' id='button-current-user'>{sessionUser.name + ' ' + sessionUser.lastname}</Link>
+                    </div> */}
+                    <PostIndex user={sessionUser} />
+                    {/* <div>
+                        <h1>here</h1>
+                    </div>
+                </div> */}
+               
+
             </>
         );
         profileLinks = (
@@ -62,12 +78,13 @@ function Navigation() {
         renderLinks = profileLinks;
     } else if(history.location.pathname === '/'){
         renderLinks = sessionLinks;
-    } else if(pathNumber.slice(1) in numbers){
-        console.log(pathNumber);
-        renderLinks = <ProfileVisited />
     } else {
         renderLinks = sessionLinks;
     }
+    // else if(pathNumber.slice(1) in numbers){
+    //     console.log(pathNumber);
+    //     renderLinks = <ProfileVisited />
+    // }
 
     return(
         <li id='li-index-navigation'>

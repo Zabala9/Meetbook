@@ -40,8 +40,19 @@ ul{
     justify-content: space-evenly;
 }
 
-#elements-post-index{
-    margin-top: 150px;
+#conteiner-elements-post-index{
+    display: flex;
+    justify-content: center;
+}
+
+#button-current-user{
+    border-style: hidden;
+    font-family: cursive;
+    font-size: 30px;
+}
+
+#button-current-user:hover{
+    background-color: rgb(174, 174, 174);
 }
 
 #edit-post-button{

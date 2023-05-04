@@ -5,13 +5,12 @@ import './searchUser.css';
 const SearchUserShow = ({id, name}) => {
     const history = useHistory();
     const newId = id.toString();
-    // console.log(name);
-    // console.log(id);
+    const newName = name.split(' ').join('');
 
     let newPath;
     const changeRoute = () => {
         newPath = newId;
-        history.push(newPath);
+        history.push(newName+newPath);
         window.location.reload(false);
     };
 

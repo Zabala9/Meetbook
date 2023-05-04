@@ -47,7 +47,7 @@ const PostForm = () => {
         }
 
         formType === 'Create Post' ? dispatch(createPost(formData)) :
-            dispatch(updatePost(formData));
+            dispatch(updatePost(post.id, formData));
 
         setContent(null);
         setPhotoFile(null);
@@ -87,8 +87,11 @@ const PostForm = () => {
                 <button id='button-post-form' >{formType === 'Create Post' ? 'Post' : 'Edit Post'}</button>
                 <br></br>
                 <input type='file' id='choose-file' onChange={handleFile} />
-                <h3>Image preview</h3>
-                {preview}
+                <br></br>
+                <br></br>
+                <label id='label-image-preview'>Image preview</label>
+                <br></br>
+                <label id='image-preview'>{preview}</label>
             </form>
             {formType === 'Update Post' ? <button onClick={goBack} id="go-back-button" >Go back</button> : '' }
         </>

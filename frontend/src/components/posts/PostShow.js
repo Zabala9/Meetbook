@@ -11,6 +11,7 @@ const PostShow = () => {
     const {postId} = useParams();
     const dispatch = useDispatch();
     const post = useSelector(getPost(postId));
+    // const post = useSelector(state => state.posts)
     let history = useHistory();
     const currentUser = useSelector(state => state.session.user);
 
@@ -32,7 +33,10 @@ const PostShow = () => {
         <div id="container-post-show">
             <ul id="post-show">
                 <div id="container-content">
-                    <h3 id="content">{post.content}</h3>
+                    <div>
+                        <h3 id="content">{post.content}</h3>
+                        {post.photoUrl !== null ? <img src={post.photoUrl} id="img-post" /> : '' }
+                    </div>
                     <label id="post-button"><PostsButton key={post.id} post={post} /></label>
                 </div>
                 <br></br>

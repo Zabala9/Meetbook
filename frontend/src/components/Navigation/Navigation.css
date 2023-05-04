@@ -116,3 +116,7 @@ li{
 #container-search-main{
     display: flex;
 }
+
+#container-session-links{
+    display: flex;
+}

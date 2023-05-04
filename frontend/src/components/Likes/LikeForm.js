@@ -14,7 +14,6 @@ const LikeForm = () => {
 
     const likes = useSelector(state => state.likes);
     const values = Object.values(likes);
-    console.log(values);
     
     const currentUserId = useSelector(state => state.session.user.id);
     let formType = likeId ? 'Delete like' : 'Create like';

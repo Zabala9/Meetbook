@@ -11,6 +11,16 @@
     font-size: 20px;
 }
 
+#label-image-preview{
+    margin: 10px;
+    font-family: cursive;
+    font-size: 17px;
+}
+
+#image-preview{
+    margin-left: -20%;
+}
+
 #go-back-button{
     margin-top: 5px;
     margin-left: 30px;

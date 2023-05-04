@@ -4,6 +4,7 @@ import {getPosts, fetchPosts} from '../../store/posts.js'
 import { useHistory, Redirect } from 'react-router-dom';
 import PostItem from './PostItem.js';
 import PostForm from './PostForm.js';
+import './postIndex.css';
 
 const PostIndex = () => {
     const dispatch = useDispatch();
@@ -23,16 +24,18 @@ const PostIndex = () => {
 
     return(
         <>
-            <ul id='elements-post-index'>
-                <div>
-                    <PostForm />
-                    {
-                        posts.map(post =>
-                            <PostItem key={`post${post.id}`} post={post} />
-                        )
-                    }
-                </div>
-            </ul>
+            <div id='conteiner-elements-post-index'>
+                <ul id='elements-post-index'>
+                    <div>
+                        <PostForm />
+                        {
+                            posts.map(post =>
+                                <PostItem key={`post${post.id}`} post={post} />
+                            )
+                        }
+                    </div>
+                </ul>
+            </div>
         </>
     );
 };
