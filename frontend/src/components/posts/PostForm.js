@@ -20,6 +20,7 @@ const PostForm = () => {
 
     const [content, setContent] = useState('');
     const [authorId, setAuthorId] = useState(currentUserId);
+    const [photoFile, setPhotoFile] = useState(null);
 
     useEffect(() => {
         if(post){
@@ -41,11 +42,16 @@ const PostForm = () => {
         formType === 'Create Post' ? dispatch(createPost(post)) :
             dispatch(updatePost(post));
     };
+
+    const handleFile = ({currentTarget}) => {
+        const file = currentTarget.files[0];
+        setPhotoFile(file);
+    };
     
     if (!post) {
         return null;
     }
-
+    
     return (
         <>
             <form onSubmit={handleSubmit} id='form-post'>
@@ -58,6 +64,8 @@ const PostForm = () => {
                     />
                 </label>
                 <button id='button-post-form' >{formType === 'Create Post' ? 'Post' : 'Edit Post'}</button>
+                <br></br>
+                <input type='file' id='choose-file' onChange={handleFile} />
             </form>
             {formType === 'Update Post' ? <button onClick={goBack} id="go-back-button" >Go back</button> : '' }
         </>
