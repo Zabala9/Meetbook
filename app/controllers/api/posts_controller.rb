@@ -1,4 +1,6 @@
 class Api::PostsController < ApplicationController
+    wrap_parameters include: Post.attribute_names + [:authorId, :photo]
+
     def index
         @posts = Post.all
         render :index
@@ -7,8 +9,9 @@ class Api::PostsController < ApplicationController
     def create
         @post = Post.new(post_params)
         
-        if @post&.save
-            render :show
+        if @post.save
+            # render :show
+            render partial: "api/posts/post", locals: { post: @post }
         else
             render json: {errors: @post.errors.full_messages},
                 status: :unprocessable_entity

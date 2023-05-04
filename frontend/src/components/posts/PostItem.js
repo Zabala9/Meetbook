@@ -10,7 +10,6 @@ const PostItem = ({post}) => {
     const dispatch = useDispatch();
     const currentUser = useSelector(state => state.session.user);
     const allUsers = useSelector(state => state.users);
-    // console.log(post.photoUrl);
 
     useEffect(() => {
         dispatch(fetchUsers());
@@ -32,7 +31,7 @@ const PostItem = ({post}) => {
                     <PostsButton key={post.id} post={post} />
                 </div>
                 <div id="container-img">
-                    {post.photoUrl !== '' ? <img src={post.photoUrl} id="img-post" /> : '' }
+                    {post.photoUrl !== null ? <img src={post.photoUrl} id="img-post" /> : '' }
                 </div>
                 <div id="container-likes-comments">
                     <Link to={`/${post.id}`} id='link-comments' >comments</Link>
