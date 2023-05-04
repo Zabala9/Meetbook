@@ -22,8 +22,8 @@ li{
     border-style: hidden;
     border-radius: 5px;
     margin-left: -200px;
-    margin-top: 20px;
-    height: 80px;
+    margin-top: 2%;
+    height: 65px;
     background-color: white;
 }
 
@@ -32,6 +32,7 @@ li{
 }
 
 #icon-button-games{
+    /* margin-top: 15%; */
     font-size: 50px;
 }
 

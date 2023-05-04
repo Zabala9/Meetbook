@@ -1,7 +1,10 @@
 #icon-search{
     font-size: 34px;
-    margin-top: 1.5vw;
     margin-right: 10px;
+}
+
+#container-search{
+    margin-top: 8%;
 }
 
 #search-input{

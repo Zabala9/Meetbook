@@ -2,15 +2,12 @@ import React, {useEffect, useState} from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { getUsers, fetchUsers } from "../../store/user";
-import ProfileVisited from "./profileVisited";
 import SearchUserShow from "./searchUserItem";
 import './searchUser.css';
 
 const SearchUser = () => {
     const dispatch = useDispatch();
     let allUsers = useSelector(getUsers);
-    let history = useHistory();
-
 
     useEffect(() => {
         dispatch(fetchUsers());
@@ -29,10 +26,12 @@ const SearchUser = () => {
     return(
         <>
             <div>
-                <i className="fa-solid fa-magnifying-glass" id="icon-search"></i>
-                <input type="text" placeholder="search Meetbook" id="search-input"
-                    onChange={(e) => setValueSearch(e.target.value)}
-                />
+                <div id="container-search">
+                    <i className="fa-solid fa-magnifying-glass" id="icon-search"></i>
+                    <input type="text" placeholder="search Meetbook" id="search-input"
+                        onChange={(e) => setValueSearch(e.target.value)}
+                    />
+                </div>
                 <div id="list-names">
                     {
                         valueSearch.length > 0 ? arr.map((name) =>
