@@ -21,6 +21,7 @@ const PostForm = () => {
     const [content, setContent] = useState('');
     const [authorId, setAuthorId] = useState(currentUserId);
     const [photoFile, setPhotoFile] = useState(null);
+    const [photoUrl, setPhotoUrl] = useState(null);
 
     useEffect(() => {
         if(post){
@@ -41,38 +42,37 @@ const PostForm = () => {
         const formData = new FormData();
         formData.append('post[content]', content);
         formData.append('post[authorId]', authorId);
-        // Object.assign(formData, {'authorId': authorId});
         if (photoFile !== null) {
             formData.append('post[photo]', photoFile);
         }
 
         formType === 'Create Post' ? dispatch(createPost(formData)) :
             dispatch(updatePost(formData));
-        
-        console.log(formData, 'here');
 
-        // const res = await csrfFetch('api/posts', {
-        //     method: 'POST',
-        //     body: formData
-        // });
-        // if(res.ok){
-        //     const newPost = await res.json();
-        //     setContent('');
-        //     setPhotoFile(null);
-        // }
-        // post = {...post, content, authorId};
+        setContent(null);
+        setPhotoFile(null);
+        setPhotoUrl(null);
     };
 
     const handleFile = ({currentTarget}) => {
         const file = currentTarget.files[0];
         setPhotoFile(file);
+        if(file){
+            const fileReader = new FileReader();
+            fileReader.readAsDataURL(file);
+            fileReader.onload = () => setPhotoUrl(fileReader.result);
+        } else {
+            setPhotoUrl(null);
+        }
     };
     
     if (!post) {
         return null;
     }
 
-    // console.log(photoFile, 'photo')
+    let preview = null;
+    if(photoUrl) preview = <img src={photoUrl} />
+
     return (
         <>
             <form onSubmit={handleSubmit} id='form-post'>
@@ -87,6 +87,8 @@ const PostForm = () => {
                 <button id='button-post-form' >{formType === 'Create Post' ? 'Post' : 'Edit Post'}</button>
                 <br></br>
                 <input type='file' id='choose-file' onChange={handleFile} />
+                <h3>Image preview</h3>
+                {preview}
             </form>
             {formType === 'Update Post' ? <button onClick={goBack} id="go-back-button" >Go back</button> : '' }
         </>
