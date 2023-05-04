@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import PostIndex from '../posts/PostIndex';
@@ -7,12 +7,13 @@ import { Link, useHistory } from 'react-router-dom';
 import SearchUser from '../Search/searchUser';
 import image from '../../assets/logo.jpg';
 import ProfileVisited from '../Search/profileVisited';
-import './Navigation.css';
 import numbers from './numbers';
-import GamesForm from '../Games';
+import './Navigation.css';
+
 
 function Navigation() {
     const sessionUser = useSelector(state => state.session.user);
+    const users = useSelector(state => state.users)
     const history = useHistory();
 
     const changeRoute = () => {
@@ -82,12 +83,13 @@ function Navigation() {
                     <button onClick={redirecting} id='button-games'><i className="fa-solid fa-gamepad" id='icon-button-games'></i></button>
                     <ProfileButton user={sessionUser} />
                 </div>
-                <GamesForm />
+                {/* <GamesForm /> */}
             </>
         )
     };
 
-    let pathNumber = history.location.pathname;
+    let pathProfileVisited = history.location.pathname;
+    let newPath = pathProfileVisited.split('/');
     let renderLinks;
     if(history.location.pathname === '/profile'){
         renderLinks = profileLinks;
@@ -95,8 +97,7 @@ function Navigation() {
         renderLinks = sessionLinks;
     } else if(history.location.pathname === '/games'){
         renderLinks = gameLinks;
-    } else if(pathNumber.slice(1) in numbers){
-        console.log(pathNumber);
+    } else if(newPath[1] in numbers){
         renderLinks = <ProfileVisited />
     } else {
         renderLinks = sessionLinks;

@@ -17,9 +17,14 @@
 
 #content-profile-visited{
     border-radius: 10px;
-    background-color: white;
+    /* background-color: white; */
     width: 650px;
-    margin-left: 35%;
+    margin-left: 20%;
+}
+
+#img-bar{
+    border: 2px solid rgb(102, 101, 101);
+    border-radius: 100%;
 }
 
 #content-profile{

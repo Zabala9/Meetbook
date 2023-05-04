@@ -5,6 +5,7 @@ import { useHistory, Redirect, Link } from "react-router-dom";
 import SearchUser from "./searchUser";
 import image from '../../assets/logo.jpg';
 import ProfileButton from "../Navigation/ProfileButton";
+import PostItem from "../posts/PostItem";
 import './searchUser.css';
 
 const ProfileVisited = () => {
@@ -42,7 +43,7 @@ const ProfileVisited = () => {
             <>
                 <div id='user-options' >
                     <div id='container-search-main'>
-                        <Link id="link-main" to={'/'} onClick={changeRoute} ><img src={image} width={'90px'} height={'85px'} ></img></Link>
+                        <Link id="link-main" to={'/'} onClick={changeRoute} ><img src={image} width={'90px'} height={'85px'} id="img-bar" ></img></Link>
                         <SearchUser />
                     </div>
                     {/* <button id='button-games'><i className="fa-solid fa-gamepad" id='icon-button-games'></i></button> */}
@@ -53,7 +54,7 @@ const ProfileVisited = () => {
                     {
                         posts.map((post) =>
                             <>
-                                <label id="content-profile">{post.content}</label>
+                                <PostItem key={`post${post.id}`} post={post} />
                             </>
                         )
                     }

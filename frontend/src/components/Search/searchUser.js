@@ -44,7 +44,7 @@ const SearchUser = () => {
                                     
                             //     }}>{name}</button>
                             // </li>
-                            // console.log(name[1])
+                            // console.log(name)
                             <SearchUserShow id={name[1]} name={name[0]} />
                         ) : ''
                     }
