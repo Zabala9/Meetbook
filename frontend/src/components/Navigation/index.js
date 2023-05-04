@@ -6,9 +6,10 @@ import { Redirect } from "react-router-dom";
 import { Link, useHistory } from 'react-router-dom';
 import SearchUser from '../Search/searchUser';
 import image from '../../assets/logo.jpg';
-import './Navigation.css';
 import ProfileVisited from '../Search/profileVisited';
+import './Navigation.css';
 import numbers from './numbers';
+import GamesForm from '../Games';
 
 function Navigation() {
     const sessionUser = useSelector(state => state.session.user);
@@ -30,6 +31,7 @@ function Navigation() {
 
     let sessionLinks;
     let profileLinks;
+    let gameLinks;
     if(sessionUser){
         sessionLinks = (
             <>
@@ -69,6 +71,19 @@ function Navigation() {
                     <PostIndex user={sessionUser} />
                 </div>
             </>
+        );
+        gameLinks = (
+            <>
+                <div id='user-options' >
+                    <div id='container-search-main'>
+                        <Link id="link-main" to={'/'} onClick={changeRoute} ><img src={image} width={'90px'} height={'85px'} id='img-bar' ></img></Link>
+                        <SearchUser />
+                    </div>
+                    <button onClick={redirecting} id='button-games'><i className="fa-solid fa-gamepad" id='icon-button-games'></i></button>
+                    <ProfileButton user={sessionUser} />
+                </div>
+                <GamesForm />
+            </>
         )
     };
 
@@ -78,13 +93,14 @@ function Navigation() {
         renderLinks = profileLinks;
     } else if(history.location.pathname === '/'){
         renderLinks = sessionLinks;
+    } else if(history.location.pathname === '/games'){
+        renderLinks = gameLinks;
+    } else if(pathNumber.slice(1) in numbers){
+        console.log(pathNumber);
+        renderLinks = <ProfileVisited />
     } else {
         renderLinks = sessionLinks;
-    }
-    // else if(pathNumber.slice(1) in numbers){
-    //     console.log(pathNumber);
-    //     renderLinks = <ProfileVisited />
-    // }
+    } 
 
     return(
         <li id='li-index-navigation'>

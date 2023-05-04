@@ -1,0 +1,17 @@
+#name-game{
+    font-family: cursive;
+    font-size: 23px;
+}
+
+#list-games{
+    display: flex;
+    justify-content: center;
+}
+
+#game-li{
+    background-color: rgb(243, 243, 243);
+}
+
+#name-game:hover{
+    color: black;
+}

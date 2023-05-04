@@ -6,6 +6,7 @@ import Navigation from "./components/Navigation";
 import Profile from "./components/Profile";
 import PostShowModal from "./components/posts/PostShowModal";
 import CommentFormModal from "./components/Comments/CommentFormModal";
+import GamesForm from "./components/Games";
 
 function App() {
 
@@ -28,6 +29,9 @@ function App() {
         <Route exact path='/:postId/comment/:commentId/edit'>
           <PostShowModal />
           <CommentFormModal />
+        </Route>
+        <Route exact path='/games'>
+          <GamesForm />
         </Route>
       </Switch>
     </>

@@ -18,6 +18,6 @@
   border-radius: 10px;
   position: absolute;
   top: 25%;
-  /* margin-top: 500px; */
+  margin-left: calc(50% - 200px);
   background-color:white;
 }
