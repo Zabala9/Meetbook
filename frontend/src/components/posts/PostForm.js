@@ -3,6 +3,7 @@ import {useParams, useHistory} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import {getPost, fetchPost, createPost, updatePost} from '../../store/posts';
 import './postForm.css';
+import csrfFetch from '../../store/csrf';
 
 const PostForm = () => {
     const {postId} = useParams();
@@ -36,11 +37,30 @@ const PostForm = () => {
         history.go(-1);
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async e => {
         e.preventDefault();
-        post = {...post, content, authorId};
-        formType === 'Create Post' ? dispatch(createPost(post)) :
-            dispatch(updatePost(post));
+        const formData = new FormData();
+        Object.assign(formData, {'content': content});
+        Object.assign(formData, {'authorId': authorId});
+        if (photoFile) {
+            Object.assign(formData, {'photo': photoFile});
+        }
+        // 
+        formType === 'Create Post' ? dispatch(createPost(formData)) :
+            dispatch(updatePost(formData));
+        
+        console.log(formData, 'here');
+
+        // const res = await csrfFetch('api/posts', {
+        //     method: 'POST',
+        //     body: formData
+        // });
+        // if(res.ok){
+        //     const newPost = await res.json();
+        //     setContent('');
+        //     setPhotoFile(null);
+        // }
+        // post = {...post, content, authorId};
     };
 
     const handleFile = ({currentTarget}) => {
@@ -51,7 +71,7 @@ const PostForm = () => {
     if (!post) {
         return null;
     }
-    
+
     return (
         <>
             <form onSubmit={handleSubmit} id='form-post'>
