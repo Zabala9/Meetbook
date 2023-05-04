@@ -14,7 +14,7 @@ const GamesForm = () => {
                 <label id="name-game">
                     <a target='_blank' href="https://zabala9.github.io/Mister-Poong/" id="a-tag">Mister Poong</a>
                     <br></br>
-                    <img id="img-game" src={'https://meetbook-seeds.s3.us-west-1.amazonaws.com/logo2+m.jpg'} />
+                    <img id="img-game" src={'https://meetbook-seeds.s3.us-west-1.amazonaws.com/misterPoong.png'} />
                 </label>
             </li>
         </ul>

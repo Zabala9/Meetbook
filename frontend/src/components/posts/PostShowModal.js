@@ -9,6 +9,7 @@ function PostShowModal(){
 
     const changeRoute = () => {
         history.goBack();
+        // window.location.reload(false);
     };
 
     return (
