@@ -4,11 +4,6 @@
     margin-left: 27%;
 }
 
-#list-games{
-    display: flex;
-    justify-content: center;
-}
-
 #game-li{
     background-color: rgb(243, 243, 243);
 }
@@ -23,4 +18,17 @@
     margin-right: 5px;
     width: 300px;
     height: 200px;
+}
+
+#list-games{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#list-games li{
+    margin: 10px 5px 10px 5px;
+}
+
+#list-games li:nth-child(2n){
+    margin: 10px 5px 5px 5px;
 }
