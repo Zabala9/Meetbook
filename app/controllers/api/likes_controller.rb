@@ -5,12 +5,15 @@ class Api::LikesController < ApplicationController
     end
 
     def create
+        
+        @like_found = Like.find_by(post_id: like_params["post_id"], author_id: like_params["author_id"]);
         @like = Like.new(like_params)
-        if @like&.save
-            render :show
-        else
+        if @like_found
             render json: {errors: @like.errors.full_messages}, 
                 status: :unprocessable_entity
+        else
+            @like.save
+            render :show
         end
     end
     

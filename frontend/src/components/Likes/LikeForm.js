@@ -35,7 +35,6 @@ const LikeForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         like = {...like, postId, authorId};
-        console.log(values.length);
         if(values.length === 0){
             dispatch(createLike(like));
         } else {
