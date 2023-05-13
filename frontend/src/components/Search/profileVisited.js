@@ -21,7 +21,6 @@ const ProfileVisited = () => {
     const changeRoute = () => {
         let newPath = '/';
         history.push(newPath);
-        window.location.reload(false);
     }
 
     useEffect(() => {
@@ -32,7 +31,6 @@ const ProfileVisited = () => {
     if(currentUser.id === pathCheckInt){
         let path = '/profile';
         history.push(path);
-        window.location.reload(false);
     }
 
     posts = posts.filter((post) => post.authorId === pathCheckInt);
@@ -41,14 +39,6 @@ const ProfileVisited = () => {
     if(currentUser){
         links = (
             <>
-                <div id='user-options' >
-                    <div id='container-search-main'>
-                        <Link id="link-main" to={'/'} onClick={changeRoute} ><img src={image} width={'90px'} height={'85px'} id="img-bar" ></img></Link>
-                        <SearchUser />
-                    </div>
-                    {/* <button id='button-games'><i className="fa-solid fa-gamepad" id='icon-button-games'></i></button> */}
-                    <ProfileButton user={currentUser} />
-                </div>
                 <label id="name-user-visited">{}</label>
                 <div id="content-profile-visited">
                     {

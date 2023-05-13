@@ -8,6 +8,8 @@ import PostShowModal from "./components/posts/PostShowModal";
 import CommentFormModal from "./components/Comments/CommentFormModal";
 import GamesForm from "./components/Games";
 import numbers from './components/Navigation/numbers.js';
+import NavBar from "./components/NavBar/NavBar";
+import PostIndex from "./components/posts/PostIndex";
 
 function App() {
   const history = useHistory();
@@ -20,10 +22,14 @@ function App() {
 
   return (
     <>
+      <NavBar />
       <Navigation />
       <Switch>
         <Route exact path="/" >
           <LoginFormPage />
+        </Route>
+        <Route exact path='/feed'>
+          <PostIndex />
         </Route>
         <Route exact path='/profile' >
           <Profile />
@@ -31,9 +37,6 @@ function App() {
         <Route exact path='/games'>
           <GamesForm />
         </Route>
-        {/* <Route exact path={pathInt}>
-          <ProfileVisited />
-        </Route> */}
         <Route exact path='/:postId/edit' >
           <PostFormModal />
         </Route>

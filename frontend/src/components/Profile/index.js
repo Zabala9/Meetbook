@@ -10,9 +10,9 @@ function Profile(){
     if(!sessionUser) return <Redirect to={'/'} />
 
     return (
-        <>
-            
-        </>
+        <div id="content">
+            <PostIndex user={sessionUser} />
+        </div>
     );
 };
 
