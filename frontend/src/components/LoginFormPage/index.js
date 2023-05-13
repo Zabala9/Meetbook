@@ -15,7 +15,7 @@ function LoginFormPage(){
     // const passwordGuest ='password';
     // const history = useHistory();
 
-    if(sessionUser) return <Redirect to={'/'} />;
+    if(sessionUser) return <Redirect to={'/feed'} />;
 
     const handleSubmit = (e) => {
         e.preventDefault();
