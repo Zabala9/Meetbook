@@ -1,7 +1,6 @@
-import React, {useState} from 'react';
-import { Link, useHistory, Redirect } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import { logout } from '../../store/session';
+import React from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import image from '../../assets/logo.jpg';
 import SearchUser from '../Search/searchUser';
 import ProfileButton from '../Navigation/ProfileButton';
@@ -10,21 +9,6 @@ import './NavBar.css';
 function NavBar(){
     const loggedIn = useSelector(state => state.session.user);
     const history = useHistory();
-    const dispatch = useDispatch();
-    console.log(loggedIn, 'here')
-
-    const logoutUser = e => {
-        e.preventDefault();
-        dispatch(logout());
-        let path = '/';
-        history.push(path);
-    };
-
-    const goToProfile = e => {
-        e.preventDefault();
-        let path = '/profile';
-        history.push(path);  
-    };
 
     const redirecting = () => {
         let newPath = '/games';

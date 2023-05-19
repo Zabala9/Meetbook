@@ -17,6 +17,11 @@
     font-size: 17px;
 }
 
+#image{
+    width: 500px;
+    height: 300px;
+}
+
 #image-preview{
     margin-left: -20%;
 }

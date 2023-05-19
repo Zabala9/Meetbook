@@ -11,7 +11,6 @@ const PostShow = () => {
     const {postId} = useParams();
     const dispatch = useDispatch();
     const post = useSelector(getPost(postId));
-    // const post = useSelector(state => state.posts)
     let history = useHistory();
     const currentUser = useSelector(state => state.session.user);
 

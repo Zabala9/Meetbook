@@ -3,20 +3,16 @@ import { useDispatch, useSelector } from "react-redux";
 import * as sessionActions from '../../store/session';
 import { useHistory } from "react-router-dom";
 import './Navigation.css';
-import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 
 function ProfileButton(){
     const dispatch = useDispatch();
     const [showMenu, setShowMenu] = useState(false);
     const history = useHistory();
     const currentUser = useSelector(state => state.session.user);
-    // console.log(userName);
 
     const changeRoute = () => {
-        // <Redirect to={'/profile'} />
         let path = '/profile'
         history.push(path);
-        window.location.reload(false);
     };
 
     const openMenu = () => {
@@ -42,23 +38,17 @@ function ProfileButton(){
     };
 
     return (
-        <>
+        <div id="dropdown-profile" style={{textAlign: 'right'}}>
             <button id="user-button" onClick={openMenu} >
                 <i className="fa-solid fa-user fa-xl" />
             </button>
             { showMenu && (
-                <ul className="profile-dropdown" >
-                    <div id="elements-profile-dropdown">
-                        <li id="li-button">
-                            <button onClick={changeRoute} id="profile-button" >Profile</button>
-                        </li>
-                        <li id="li-button">
-                            <button onClick={logout} id="logout-button" ><i className="fa-solid fa-person-through-window"></i> Log out</button>
-                        </li>
-                    </div>
-                </ul>
+                <div id="elements-profile-dropdown">
+                    <button onClick={changeRoute} id="profile-button" >Profile</button>
+                    <button onClick={logout} id="logout-button" ><i className="fa-solid fa-person-through-window"></i> Log out</button>
+                </div>
             )}
-        </>
+        </div>
     )
 };
 

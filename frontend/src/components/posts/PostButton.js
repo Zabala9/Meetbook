@@ -6,14 +6,8 @@ import './postIndex.css';
 
 function PostsButton({post}){
     const dispatch = useDispatch();
-    const currentUserId = useSelector(state => state.session.user.id);
     const [showPostsMenu, setShowPostsMenu] = useState(false);
     const history = useHistory();
-
-    const openMenu = () => {
-        if(showPostsMenu) return;
-        setShowPostsMenu(true);
-    };
 
     const changeRoute = () => {
         let path = `${post.id}/edit`
@@ -38,23 +32,15 @@ function PostsButton({post}){
     };
 
     return(
-        <>
-            <button id="open-menu" onClick={openMenu}>
+        <div id="dropdown">
+            <button id="dropbtn" >
                 <i className="fa-solid fa-ellipsis" id="button-post" />
             </button>
-            { showPostsMenu && (
-                <ul className="post-dropdown">
-                    <div>
-                        <li id="elements-post-button">
-                            {post.authorId === currentUserId ? <button onClick={changeRoute} id="edit-post-button" >Edit post</button> : ''}
-                        </li>
-                        <li id="elements-post-button">
-                            {post.authorId === currentUserId ? <button onClick={remove} id="remove-post-button" >Delete post</button> : ''}
-                        </li>
-                    </div>
-                </ul>
-            )}
-        </>
+            <div id="dropdown-content">
+                <button onClick={changeRoute} id="edit-post-button" >Edit post</button>
+                <button onClick={remove} id="remove-post-button" >Delete post</button>
+            </div>
+        </div>
     )
 };
 

@@ -49,9 +49,11 @@ const PostForm = () => {
         formType === 'Create Post' ? dispatch(createPost(formData)) :
             dispatch(updatePost(post.id, formData));
 
-        setContent(null);
+        setContent('');
         setPhotoFile(null);
         setPhotoUrl(null);
+        let path = '/feed';
+        history.push(path);
     };
 
     const handleFile = ({currentTarget}) => {
@@ -71,7 +73,7 @@ const PostForm = () => {
     }
 
     let preview = null;
-    if(photoUrl) preview = <img src={photoUrl} />
+    if(photoUrl) preview = <img src={photoUrl} id='image' />
 
     return (
         <>

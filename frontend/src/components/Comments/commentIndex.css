@@ -17,12 +17,27 @@
     border-bottom: 2px solid black;
 }
 
-#open-menu{
-    margin-top: -1vw;
+#dropdown-comment{
+    position: relative;
+    display: inline-block;
 }
 
-#open-menu:hover{
-    background-color: rgb(127, 123, 123);
+#dropdown-content-comment{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    /* margin-left: -100px; */
+}
+
+#open-menu-comment{
+    border: 1px solid rgb(187, 187, 187);
+    border-radius: 50%;
+    margin-top: -25px;
+    height: 30px;
+}
+
+#open-menu-comment:hover{
+    background-color: #ddd;
 }
 
 #comment-dropdown{
@@ -34,6 +49,7 @@
     font-family: cursive;
     font-size: 17px;
     margin-bottom: 5px;
+    width: 145px; 
 }
 
 #all-comments{

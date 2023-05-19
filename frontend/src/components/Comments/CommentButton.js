@@ -23,8 +23,6 @@ function CommentButton({comment}){
         history.push(path);
     };
 
-    // const [showCommentForm, setShowCommentForm] = useState(false);
-
     useEffect(() => {
         if(!showCommentMenu) return;
 
@@ -42,23 +40,17 @@ function CommentButton({comment}){
     };
 
     return(
-        <>
-            <button id="open-menu" onClick={openMenu}>
+        <div id="dropdown-comment" style={{textAlign: 'right'}} >
+            <button id="open-menu-comment" onClick={openMenu}>
                 <i className="fa-solid fa-ellipsis" id="button-comment" />
             </button>
             {showCommentMenu && (
-                <ul id="comment-dropdown">
-                    <div>
-                        <li id="elements-comment-button">
-                            {comment.authorId === currentUserId ? <button onClick={changeRoute} id="edit-comment-button">Edit comment</button> : ''}
-                        </li>
-                        <li>
-                            {comment.authorId === currentUserId ? <button onClick={remove} id="remove-comment-button">Delete comment</button> : ''}
-                        </li>
-                    </div>
-                </ul>
+                <div id="dropdown-content-comment">
+                    {comment.authorId === currentUserId ? <button onClick={changeRoute} id="edit-comment-button">Edit comment</button> : ''}
+                    {comment.authorId === currentUserId ? <button onClick={remove} id="remove-comment-button">Delete comment</button> : ''}
+                </div>
             )}
-        </>
+        </div>
     );
 };
 

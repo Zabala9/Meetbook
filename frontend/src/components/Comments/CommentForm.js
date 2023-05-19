@@ -9,9 +9,6 @@ const CommentForm = () => {
     const {postId} = useParams();
     let history = useHistory();
     const dispatch = useDispatch();
-    // let path = history.location.pathname;
-    // let currentPostId = path.slice(1,3);
-    // console.log(currentPostId);
     const currentUserId = useSelector(state => state.session.user.id);
     const formType = commentId ? 'Update comment' : 'Create comment';
     let comment = useSelector(getComment(commentId));
@@ -27,13 +24,15 @@ const CommentForm = () => {
     const [authorId, setAuthorId] = useState(currentUserId);
     const [currentPostId, setCurrentPostId] = useState(postId);
 
-    // useEffect(() => {
-    //     if(comment) setContent(comment.content);
-    // }, [comment]);
-
     useEffect(() => {
         if(commentId) dispatch(fetchComment(commentId));
     }, [dispatch, commentId]);
+
+    useEffect(() => {
+        if(comment){
+            setContent(comment.content);
+        }
+    }, []);
 
     const goBack = () => {
         history.go(-1);
@@ -44,6 +43,9 @@ const CommentForm = () => {
         comment = {...comment, content, authorId, currentPostId};
         formType === 'Create comment' ? dispatch(createComment(comment)) :
             dispatch(updateComment(comment));
+        setContent('');
+        let path = `/${postId}`;
+        history.push(path);
     };
 
     return (

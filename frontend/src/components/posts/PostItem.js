@@ -28,7 +28,7 @@ const PostItem = ({post}) => {
                 <h2 id="owner-post" >{currentUser.id === post.authorId ? [currentUser.name + " " + currentUser.lastname] : nameOwnerPost}</h2>
                 <div id="elements-li">
                     <label id="post-content">{post.content}</label>
-                    <PostsButton key={post.id} post={post} />
+                    {post.authorId === currentUser.id ? <PostsButton key={post.id} post={post} /> : undefined}
                 </div>
                 <div id="container-img">
                     {post.photoUrl !== null ? <img src={post.photoUrl} id="img-post" /> : '' }

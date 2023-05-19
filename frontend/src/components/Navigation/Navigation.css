@@ -32,7 +32,6 @@ li{
 }
 
 #icon-button-games{
-    /* margin-top: 15%; */
     font-size: 50px;
 }
 
@@ -44,31 +43,24 @@ li{
     border-radius: 30px;
     width: 50px;
     height: 50px;
+    transition: 0.5s;
 }
 
 #user-button:hover, #profile-button:hover, #logout-button:hover{
     background-color: rgb(255, 165, 165);
+    transition: 0.5s;
 }
 
-#user-button:after {
-  content: "";
-  background: #f1f1f1;
-  display: block;
-  position: absolute;
-  padding-top: 0px;
-  padding-left: 50px;
-  padding-bottom: 50px;
-  margin-left: -8px !important;
-  margin-top: -30px;
-  opacity: 0;
-  transition: all 0.8s
+#dropdown-profile{
+    position: relative;
+    display: inline-block;
 }
 
-#user-button:active:after {
-  padding: 0;
-  margin: 0;
-  opacity: 1;
-  transition: 0s
+#elements-profile-dropdown{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    margin-left: -100px;
 }
 
 #profile-button{
@@ -76,7 +68,7 @@ li{
     border-radius: 5px;
     font-size: 25px;
     font-family: cursive;
-    margin: 5px;
+    /* margin: 5px; */
 }
 
 #logout-button{
@@ -84,9 +76,9 @@ li{
     border-radius: 5px;
     font-size: 25px;
     font-family: cursive;
-    margin: 5px;
+    margin-top: 5px;
     width: 150px;
-    margin-left: -2vw;
+    /* margin-left: -2vw; */
 }
 
 #link-main{
@@ -105,12 +97,6 @@ li{
     position: absolute;
     margin-bottom: 10px;
     width: 120px;
-}
-
-#elements-profile-dropdown{
-    width: 100px;
-    margin-left: 85vw;
-    margin-top: 2vw;
 }
 
 #container-search-main{
