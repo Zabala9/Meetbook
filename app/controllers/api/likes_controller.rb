@@ -5,7 +5,6 @@ class Api::LikesController < ApplicationController
     end
 
     def create
-        
         @like_found = Like.find_by(post_id: like_params["post_id"], author_id: like_params["author_id"]);
         @like = Like.new(like_params)
         if @like_found

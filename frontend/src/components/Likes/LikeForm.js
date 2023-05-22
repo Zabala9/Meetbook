@@ -1,11 +1,9 @@
-import { useEffect } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { createLike, deleteLike, fetchLike, getLike } from "../../store/like";
+import { createLike, deleteLike } from "../../store/like";
 import './like.css';
 
 const LikeForm = () => {
-    const {likeId} = useParams();
     let history = useHistory();
     const dispatch = useDispatch();
     let path = history.location.pathname;
@@ -14,37 +12,26 @@ const LikeForm = () => {
 
     const likes = useSelector(state => state.likes);
     const values = Object.values(likes);
-    
+    const likesCurrentPost = values.filter((likeValue) => likeValue.postId === currentPostIdInt );
     const currentUserId = useSelector(state => state.session.user.id);
-    let formType = likeId ? 'Delete like' : 'Create like';
-    let like = useSelector(getLike(likeId));
-    if(formType === 'Create like'){
-        like = {
-            postId: currentPostId,
-            authorId: currentUserId
-        }
-    }
 
     const authorId = currentUserId;
     const postId = currentPostId;
 
-    useEffect(() => {
-        if(likeId) dispatch(fetchLike(likeId));
-    }, [dispatch, likeId]);
+    let like;
 
     const handleSubmit = (e) => {
         e.preventDefault();
         like = {...like, postId, authorId};
-        if(values.length === 0){
+        if(likesCurrentPost.length === 0){
             dispatch(createLike(like));
         } else {
-            values.forEach((value) => {
-                if(value.authorId === currentUserId && currentPostIdInt === value.postId){
-                    dispatch(deleteLike(value.id))
-                } else {
-                    dispatch(createLike(like));
-                }
-            });
+            const currentUserLikes = likesCurrentPost.filter((value) => value.authorId === currentUserId );
+            if(currentUserLikes.length > 0){
+                dispatch(deleteLike(currentUserLikes[0].id));
+            } else if (currentUserLikes.length === 0){
+                dispatch(createLike(like));
+            }
         }
     };
 

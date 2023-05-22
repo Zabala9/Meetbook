@@ -17,14 +17,13 @@ const LikeIndex = () => {
         dispatch(fetchLikes());
     }, [dispatch]);
 
-    likes = likes.filter((like) => like.postId === currentPostIdInt);
+    const likesCounter = likes.filter((like) => like.postId === currentPostIdInt);
+    console.log(likesCounter, 'counter')
 
     let countLikes = 0;
-    likes.forEach((like) => {
+    likesCounter.forEach((like) => {
         countLikes += 1;
     });
-
-    //to={`/${currentPostId}/likes`}
 
     return(
         <>
