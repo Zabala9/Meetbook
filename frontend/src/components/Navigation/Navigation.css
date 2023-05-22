@@ -18,23 +18,6 @@ li{
     width: 100%;
 }
 
-#button-games{
-    border-style: hidden;
-    border-radius: 5px;
-    margin-left: -200px;
-    margin-top: 2%;
-    height: 65px;
-    background-color: white;
-}
-
-#button-games:hover{
-    background-color: #d4d4d4;
-}
-
-#icon-button-games{
-    font-size: 50px;
-}
-
 #user-button{
     margin: 10px;
     margin-top: 30px;
@@ -60,7 +43,13 @@ li{
     display: flex;
     flex-direction: column;
     position: absolute;
+    margin-top: -5px;
     margin-left: -100px;
+    padding: 5px;
+    height: 82px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: white;
 }
 
 #profile-button{
@@ -68,7 +57,7 @@ li{
     border-radius: 5px;
     font-size: 25px;
     font-family: cursive;
-    /* margin: 5px; */
+    transition: 0.5s;
 }
 
 #logout-button{
@@ -78,7 +67,7 @@ li{
     font-family: cursive;
     margin-top: 5px;
     width: 150px;
-    /* margin-left: -2vw; */
+    transition: 0.5s;
 }
 
 #link-main{
