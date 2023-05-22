@@ -20,6 +20,12 @@ ul{
 #dropdown-content{
     display: none;
     position: absolute;
+    background-color: white;
+    padding: 5px;
+    width: 130px;
+    border-top: 1px solid rgb(202, 202, 202);
+    border-left: 1px solid rgb(204, 204, 204);
+    box-shadow: 5px 5px 5px #ddd;
 }
 
 #dropdown:hover #dropdown-content{
@@ -67,6 +73,7 @@ ul{
     width: 110px;
     font-family: cursive;
     margin-bottom: 5px;
+    transition: 0.5s;
 }
 
 #remove-post-button{
@@ -74,6 +81,7 @@ ul{
     width: 130px;
     font-family: cursive;
     margin-right: 10px;
+    transition: 0.5s;
 }
 
 #post-content{
