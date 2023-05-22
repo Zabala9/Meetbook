@@ -38,7 +38,7 @@ const LikeForm = () => {
     return(
         <>
             <div id="container-likes-counter">
-                <label id="likes-counter">{likesCurrentPost.length}</label>
+                {likesCurrentPost.length > 0 ? <label id="likes-counter">{likesCurrentPost.length}</label> : undefined}
             </div>
             <button onClick={handleSubmit} id="button-like-form">
                 <i className="fa-solid fa-thumbs-up" id="icon-like" >

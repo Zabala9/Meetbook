@@ -6,10 +6,13 @@ import { fetchUsers } from '../../store/user.js';
 import './postIndex.css';
 
 const PostItem = ({post}) => {
-    // let users = useSelector(getUsers);
     const dispatch = useDispatch();
     const currentUser = useSelector(state => state.session.user);
     const allUsers = useSelector(state => state.users);
+    const likes = useSelector(state => state.likes);
+    const values = Object.values(likes);
+
+    const likesCurrentPost = values.filter((like) => like.postId === post.id);
 
     useEffect(() => {
         dispatch(fetchUsers());
@@ -34,6 +37,7 @@ const PostItem = ({post}) => {
                     {post.photoUrl !== null ? <img src={post.photoUrl} id="img-post" /> : '' }
                 </div>
                 <div id="container-likes-comments">
+                    {likesCurrentPost.length > 0 ? <Link to={`/${post.id}`} id='link-likes' >{likesCurrentPost.length} like</Link> : undefined}
                     <Link to={`/${post.id}`} id='link-comments' >comments</Link>
                 </div>
             </li>
