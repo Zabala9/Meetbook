@@ -26,8 +26,8 @@ const PostItem = ({post}) => {
     }
 
     return(
-        <div id="all-posts">
-            <li id="post-li">
+        // <div id="all-posts">
+            <div id="post-li">
                 <h2 id="owner-post" >{currentUser.id === post.authorId ? [currentUser.name + " " + currentUser.lastname] : nameOwnerPost}</h2>
                 <div id="elements-li">
                     <label id="post-content">{post.content}</label>
@@ -40,8 +40,8 @@ const PostItem = ({post}) => {
                     {likesCurrentPost.length > 0 ? <Link to={`/${post.id}`} id='link-likes' >{likesCurrentPost.length} like</Link> : undefined}
                     <Link to={`/${post.id}`} id='link-comments' >comments</Link>
                 </div>
-            </li>
-        </div>
+            </div>
+        // </div>
     );
 };
 

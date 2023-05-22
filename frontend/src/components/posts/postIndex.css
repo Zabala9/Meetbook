@@ -5,11 +5,27 @@ ul{
     width: 90%;
 }
 
+#elements-post-index{
+    display: flex;
+    justify-content: space-between;
+}
+
+#container-post-index{
+    margin-left: 60px;
+}
+
+#left-sidebar{
+    background-color: white;
+}
+
+#rigth-sidebar{
+    background-color: white;
+}
+
 #post-li{
     border-radius: 10px;
     background-color: white;
     width: 650px;
-    margin-left: -2vw;
 }
 
 #dropdown{
@@ -30,11 +46,6 @@ ul{
 
 #dropdown:hover #dropdown-content{
     display: block;
-}
-
-#all-posts{
-    margin-top: 70px;
-    margin-left: 30%;
 }
 
 #dropbtn{

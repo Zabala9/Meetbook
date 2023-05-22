@@ -25,16 +25,23 @@ const PostIndex = () => {
     return(
         <>
             <div id='conteiner-elements-post-index'>
-                <ul id='elements-post-index'>
-                    <div>
+                <div id='elements-post-index'>
+                    {/* {window.location.pathname === '/feed' ? <div id='left-sidebar'>
+                        <label>Test</label>
+                    </div> : undefined} */}
+                    <div id='container-post-index'>
                         <PostForm />
+                        {window.location.pathname === '/profile' ? <label>Posts</label> : undefined}
                         {
                             posts.map(post =>
                                 <PostItem key={`post${post.id}`} post={post} />
                             )
                         }
                     </div>
-                </ul>
+                    {/* {window.location.pathname === '/feed' ? <div id='rigth-sidebar'>
+                        <label>Test #2</label>
+                    </div> : undefined} */}
+                </div>
             </div>
         </>
     );
