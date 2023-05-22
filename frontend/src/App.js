@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch, useHistory } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import LoginFormPage from "./components/LoginFormPage";
 import PostFormModal from "./components/posts/PostFormModal";
 import Navigation from "./components/Navigation";
@@ -7,18 +7,10 @@ import Profile from "./components/Profile";
 import PostShowModal from "./components/posts/PostShowModal";
 import CommentFormModal from "./components/Comments/CommentFormModal";
 import GamesForm from "./components/Games";
-import numbers from './components/Navigation/numbers.js';
 import NavBar from "./components/NavBar/NavBar";
 import PostIndex from "./components/posts/PostIndex";
 
 function App() {
-  const history = useHistory();
-  let path = history.location.pathname;
-
-  let pathInt;
-  if(path.slice(1) in numbers){
-    pathInt = parseInt(path.slice(1));
-  }
 
   return (
     <>

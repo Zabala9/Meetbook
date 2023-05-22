@@ -21,7 +21,7 @@ function NavBar(){
                 <>
                     <div id='user-options' >
                         <div id='container-search-main'>
-                            <Link id="link-main" to={'/'} ><img src={image} width={'90px'} height={'85px'} id='img-bar' ></img></Link>
+                            <Link id="link-main" to={'/'} ><img src={image} width={'90px'} height={'85px'} id='img-bar' alt='' ></img></Link>
                             <SearchUser />
                         </div>
                         <button onClick={redirecting} id='button-games'><i className="fa-solid fa-gamepad" id='icon-button-games'></i></button>

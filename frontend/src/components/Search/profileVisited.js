@@ -1,10 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { getPosts, fetchPosts } from "../../store/posts";
-import { useHistory, Redirect, Link } from "react-router-dom";
-import SearchUser from "./searchUser";
-import image from '../../assets/logo.jpg';
-import ProfileButton from "../Navigation/ProfileButton";
+import { useHistory, Redirect } from "react-router-dom";
 import PostItem from "../posts/PostItem";
 import './searchUser.css';
 
@@ -13,15 +10,15 @@ const ProfileVisited = () => {
     let posts = useSelector(getPosts);
     const history = useHistory();
     const currentUser = useSelector(state => state.session.user);
-    const users = useSelector(state => state.users);
+    // const users = useSelector(state => state.users);
     const path = window.location.pathname;
     const pathCheck = path.slice(1);
     const pathCheckInt = parseInt(pathCheck);
 
-    const changeRoute = () => {
-        let newPath = '/';
-        history.push(newPath);
-    }
+    // const changeRoute = () => {
+    //     let newPath = '/';
+    //     history.push(newPath);
+    // }
 
     useEffect(() => {
         dispatch(fetchPosts());

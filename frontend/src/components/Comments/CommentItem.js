@@ -1,11 +1,11 @@
 import React, {useEffect} from "react";
 import CommentButton from "./CommentButton";
 import { useSelector, useDispatch } from "react-redux";
-import { getUsers, fetchUsers } from '../../store/user.js';
+import { fetchUsers } from '../../store/user.js';
 import './commentIndex.css';
 
 const CommentItem = ({comment}) => {
-    let users = useSelector(getUsers);
+    // let users = useSelector(getUsers);
     const dispatch = useDispatch();
     const currentUser = useSelector(state => state.session.user);
     const allUsers = useSelector(state => state.users);

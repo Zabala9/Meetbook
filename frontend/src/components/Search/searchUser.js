@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
 import { getUsers, fetchUsers } from "../../store/user";
 import SearchUserShow from "./searchUserItem";
 import './searchUser.css';

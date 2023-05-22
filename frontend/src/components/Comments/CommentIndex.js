@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getComments, fetchComments } from "../../store/comment";
-import { useHistory, Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import CommentItem from "./CommentItem";
 import CommentForm from "./CommentForm";
 import './commentIndex.css';
@@ -18,9 +18,7 @@ const CommentIndex = () => {
         dispatch(fetchComments());
     }, [dispatch]);
 
-    // if(history.location.pathname){
     comments = comments.filter((comment) => comment.postId === currentPostIdInt);
-    // }
 
     return(
         <>

@@ -8,7 +8,7 @@ function ProfileButton(){
     const dispatch = useDispatch();
     const [showMenu, setShowMenu] = useState(false);
     const history = useHistory();
-    const currentUser = useSelector(state => state.session.user);
+    // const currentUser = useSelector(state => state.session.user);
 
     const changeRoute = () => {
         let path = '/profile'

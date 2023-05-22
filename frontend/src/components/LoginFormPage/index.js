@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import * as sessionActions from '../../store/session';
-import {useDispatch, useSelector} from 'react-redux';
-import {Redirect, NavLink, useHistory} from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import SignupFormModal from '../LoginFormModal';
 import './LoginForm.css';
 
@@ -11,9 +11,6 @@ function LoginFormPage(){
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState([]);
-    // const emailGuest = 'andresvaron88@gmail.com';
-    // const passwordGuest ='password';
-    // const history = useHistory();
 
     if(sessionUser) return <Redirect to={'/feed'} />;
 

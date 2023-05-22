@@ -2,11 +2,11 @@ import React, { useEffect } from "react";
 import PostsButton from "./PostButton";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { getUsers, fetchUsers } from '../../store/user.js';
+import { fetchUsers } from '../../store/user.js';
 import './postIndex.css';
 
 const PostItem = ({post}) => {
-    let users = useSelector(getUsers);
+    // let users = useSelector(getUsers);
     const dispatch = useDispatch();
     const currentUser = useSelector(state => state.session.user);
     const allUsers = useSelector(state => state.users);
