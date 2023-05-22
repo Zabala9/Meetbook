@@ -27,8 +27,8 @@ const LikeIndex = () => {
 
     return(
         <>
-            <Link  id="counter-likes">{countLikes === 0 ? '' : countLikes}</Link>
-            <br></br>
+            {/* <Link  id="counter-likes">{countLikes === 0 ? '' : countLikes}</Link> */}
+            {/* <br></br> */}
             <LikeForm />
         </>
     );
