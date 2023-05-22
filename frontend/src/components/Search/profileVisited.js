@@ -29,6 +29,8 @@ const ProfileVisited = () => {
 
     posts = posts.filter((post) => post.authorId === pathCheckInt);
 
+    if(!infoUserVisited) return null
+
     let links;
     if(currentUser){
         links = (
