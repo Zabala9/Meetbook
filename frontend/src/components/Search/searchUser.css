@@ -1,3 +1,9 @@
+#name-user-visited{
+    font-size: 65px;
+    font-family: cursive;
+    margin-left: 10vw;
+}
+
 #icon-search{
     font-size: 34px;
     margin-right: 10px;
@@ -15,11 +21,16 @@
     width: 350px;
 }
 
+#posts-label{
+    font-family: cursive;
+    font-size: 30px;
+}
+
 #content-profile-visited{
     border-radius: 10px;
-    /* background-color: white; */
     width: 650px;
-    margin-left: 20%;
+    margin-top: 100px;
+    margin-left: 30vw;
 }
 
 #img-bar{

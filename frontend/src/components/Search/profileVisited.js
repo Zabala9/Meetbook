@@ -10,15 +10,12 @@ const ProfileVisited = () => {
     let posts = useSelector(getPosts);
     const history = useHistory();
     const currentUser = useSelector(state => state.session.user);
-    // const users = useSelector(state => state.users);
+    const profileUserVisited = useSelector(state => state.users);
     const path = window.location.pathname;
     const pathCheck = path.slice(1);
     const pathCheckInt = parseInt(pathCheck);
 
-    // const changeRoute = () => {
-    //     let newPath = '/';
-    //     history.push(newPath);
-    // }
+    const infoUserVisited = profileUserVisited[pathCheckInt]
 
     useEffect(() => {
         dispatch(fetchPosts());
@@ -36,8 +33,9 @@ const ProfileVisited = () => {
     if(currentUser){
         links = (
             <>
-                <label id="name-user-visited">{}</label>
+                <label id="name-user-visited">{infoUserVisited.name + ' ' + infoUserVisited.lastname}</label>
                 <div id="content-profile-visited">
+                    <label id="posts-label">Posts</label>
                     {
                         posts.map((post) =>
                             <>
