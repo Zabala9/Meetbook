@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import * as sessionActions from '../../store/session';
 import { useHistory } from "react-router-dom";
 import './Navigation.css';
@@ -8,7 +8,6 @@ function ProfileButton(){
     const dispatch = useDispatch();
     const [showMenu, setShowMenu] = useState(false);
     const history = useHistory();
-    // const currentUser = useSelector(state => state.session.user);
 
     const changeRoute = () => {
         let path = '/profile'
@@ -37,6 +36,11 @@ function ProfileButton(){
         dispatch(sessionActions.logout());
     };
 
+    const about = () => {
+        let path = '/about';
+        history.push(path);
+    };
+
     return (
         <div id="dropdown-profile" style={{textAlign: 'right'}}>
             <button id="user-button" onClick={openMenu} >
@@ -45,6 +49,7 @@ function ProfileButton(){
             { showMenu && (
                 <div id="elements-profile-dropdown">
                     <button onClick={changeRoute} id="profile-button" >Profile</button>
+                    <button onClick={about} id="about-button"><i className="fa-solid fa-circle-info"></i> About us</button>
                     <button onClick={logout} id="logout-button" ><i className="fa-solid fa-person-through-window"></i> Log out</button>
                 </div>
             )}

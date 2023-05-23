@@ -29,7 +29,7 @@ li{
     transition: 0.5s;
 }
 
-#user-button:hover, #profile-button:hover, #logout-button:hover{
+#user-button:hover, #profile-button:hover, #logout-button:hover, #about-button:hover{
     background-color: rgb(255, 165, 165);
     transition: 0.5s;
 }
@@ -46,7 +46,7 @@ li{
     margin-top: -5px;
     margin-left: -100px;
     padding: 5px;
-    height: 82px;
+    height: 125px;
     border: 1px solid black;
     border-radius: 5px;
     background-color: white;
@@ -67,6 +67,15 @@ li{
     font-family: cursive;
     margin-top: 5px;
     width: 150px;
+    transition: 0.5s;
+}
+
+#about-button{
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 25px;
+    margin-top: 5px;
+    font-family: cursive;
     transition: 0.5s;
 }
 

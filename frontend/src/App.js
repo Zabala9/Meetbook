@@ -10,6 +10,7 @@ import GamesForm from "./components/Games";
 import NavBar from "./components/NavBar/NavBar";
 import PostIndex from "./components/posts/PostIndex";
 import ProfileVisited from "./components/Search/profileVisited";
+import About from "./components/About/About";
 
 function App({path}) {
 
@@ -29,6 +30,9 @@ function App({path}) {
         </Route>
         <Route exact path='/games'>
           <GamesForm />
+        </Route>
+        <Route exact path='/about'>
+          <About />
         </Route>
         <Route exact path='/:postId/edit' >
           <PostFormModal />
