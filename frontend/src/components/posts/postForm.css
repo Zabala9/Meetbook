@@ -8,6 +8,7 @@
 #choose-file{
     margin-top: 13px;
     font-size: 20px;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 #label-image-preview{
@@ -47,9 +48,16 @@
 }
 
 #button-post-form{
+    border: 1px solid black;
     border-radius: 5px;
     margin-left: 10px;
     font-size: 27px;
-    color: red;
-    background-color: rgb(66, 66, 66);
+    padding: 3px;
+    color: black;
+    background-color: #ddd;
+    transition: 0.5s;
+}
+
+#button-post-form:hover{
+    font-size: 32px;
 }
