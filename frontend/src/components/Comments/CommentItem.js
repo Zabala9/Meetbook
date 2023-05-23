@@ -5,7 +5,6 @@ import { fetchUsers } from '../../store/user.js';
 import './commentIndex.css';
 
 const CommentItem = ({comment}) => {
-    // let users = useSelector(getUsers);
     const dispatch = useDispatch();
     const currentUser = useSelector(state => state.session.user);
     const allUsers = useSelector(state => state.users);
@@ -24,7 +23,7 @@ const CommentItem = ({comment}) => {
     return(
         <div id="all-comments">
             <li id="comment-li">
-                <h2 id="owner-comment">{currentUser.id === comment.authorId ? [currentUser.name + " " + currentUser.lastname] : nameOwnerComment}</h2>
+                <label id="owner-comment">{currentUser.id === comment.authorId ? [currentUser.name + " " + currentUser.lastname] : nameOwnerComment}</label>
                 <div id="elements-li">
                     <label id="comment-content">{comment.content}</label>
                     <CommentButton key={comment.id} comment={comment} />

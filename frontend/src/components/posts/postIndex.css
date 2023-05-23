@@ -5,6 +5,10 @@ ul{
     width: 90%;
 }
 
+#label-posts{
+    font-weight: bold;
+}
+
 #elements-post-index{
     display: flex;
     justify-content: space-between;
@@ -60,6 +64,7 @@ ul{
 }
 
 #elements-li{
+    /* margin-top: 100px; */
     display: flex;
     justify-content: space-evenly;
 }
@@ -71,7 +76,6 @@ ul{
 
 #button-current-user{
     border-style: hidden;
-    font-family: cursive;
     font-size: 30px;
 }
 
@@ -82,7 +86,7 @@ ul{
 #edit-post-button{
     font-size: 20px;
     width: 110px;
-    font-family: cursive;
+    font-weight: bold;
     margin-bottom: 5px;
     transition: 0.5s;
 }
@@ -90,7 +94,7 @@ ul{
 #remove-post-button{
     font-size: 20px;
     width: 130px;
-    font-family: cursive;
+    font-weight: bold;
     margin-right: 10px;
     transition: 0.5s;
 }
@@ -99,7 +103,7 @@ ul{
     margin-top: -10px;
     margin-bottom: 10px;
     font-size: 25px;
-    font-family: cursive;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 #edit-label{
@@ -110,10 +114,10 @@ ul{
 #owner-post{
     width: 300px;
     font-size: 28px;
-    font-family: cursive;
     color: rgb(206, 85, 85);
     padding-top: 10px;
     padding-left: 15px;
+    font-weight: bold;
 }
 
 #container-img{
@@ -135,7 +139,7 @@ ul{
 #link-comments{
     margin-top: 15px;
     margin-bottom: 10px;
-    font-family: cursive;
+    font-weight: bold;
     font-size: 20px;
     color: black;
     text-decoration: none;
@@ -152,7 +156,7 @@ ul{
 #link-likes{
     margin-top: 15px;
     margin-bottom: 10px;
-    font-family: cursive;
+    font-weight: bold;
     font-size: 20px;
     color: black;
     text-decoration: none;

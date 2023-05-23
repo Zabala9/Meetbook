@@ -57,11 +57,6 @@ function LoginFormPage(){
             });
     };
 
-    // const changeRoute = () => {
-    //     let path = '/signup'
-    //     history.push(path);
-    // };
-
     return (
         <>
             <div id='general'>
@@ -98,7 +93,6 @@ function LoginFormPage(){
                         <input type='submit' value='Log In' id='login-button' />
                     </form>
                     <SignupFormModal />
-                    {/* <button onClick={changeRoute} id='signup' >Sign up</button> */}
                 </div>
             </div>
         </>

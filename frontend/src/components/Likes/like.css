@@ -1,7 +1,6 @@
 #likes-counter{
     font-size: 20px;
     margin-left: 15px;
-    font-family: cursive;
 }
 
 #icon-like{
@@ -10,7 +9,7 @@
 
 #like-label{
     margin-left: 10px;
-    font-family: cursive;
+    font-size: 25px;
 }
 
 #button-like-form{

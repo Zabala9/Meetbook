@@ -1,7 +1,7 @@
 #name-user-visited{
     font-size: 65px;
-    font-family: cursive;
     margin-left: 10vw;
+    font-weight: bold;
 }
 
 #icon-search{
@@ -16,14 +16,15 @@
 #search-input{
     border: 2px solid black;
     border-radius: 5px;
-    font-family: cursive;
     font-size: 30px;
     width: 350px;
+    padding: 3px;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 #posts-label{
-    font-family: cursive;
     font-size: 30px;
+    font-weight: bold;
 }
 
 #content-profile-visited{
@@ -41,13 +42,13 @@
 #content-profile{
     margin-bottom: 10px;
     font-size: 25px;
-    font-family: cursive;
     display: flex;
     justify-content: center;
 }
 
 #button-name-search{
     margin-left: 50px;
-    font-family: cursive;
+    padding: 5px;
+    font-weight: bold;
     font-size: 20px;
 }

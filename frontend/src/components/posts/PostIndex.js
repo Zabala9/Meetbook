@@ -31,7 +31,7 @@ const PostIndex = () => {
                     </div> : undefined} */}
                     <div id='container-post-index'>
                         <PostForm />
-                        {window.location.pathname === '/profile' ? <label>Posts</label> : undefined}
+                        {window.location.pathname === '/profile' ? <label id='label-posts'>Posts</label> : undefined}
                         {
                             posts.map(post =>
                                 <PostItem key={`post${post.id}`} post={post} />

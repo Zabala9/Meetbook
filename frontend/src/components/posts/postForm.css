@@ -7,14 +7,12 @@
 
 #choose-file{
     margin-top: 13px;
-    font-family: cursive;
     font-size: 20px;
 }
 
 #label-image-preview{
     margin: 10px;
-    font-family: cursive;
-    font-size: 17px;
+    font-size: 22px;
 }
 
 #image{
@@ -36,7 +34,6 @@
     font-size: 30px;
     margin-top: -60px;
     margin-left: -200px;
-    font-family: cursive;
     width: 180px;
 }
 
@@ -45,6 +42,8 @@
     margin-left: -150px;
     font-size: 28px;
     text-indent: 5px;
+    width: 300px;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 #button-post-form{
