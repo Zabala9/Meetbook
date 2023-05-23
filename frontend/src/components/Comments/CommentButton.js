@@ -46,8 +46,8 @@ function CommentButton({comment}){
             </button>
             {showCommentMenu && (
                 <div id="dropdown-content-comment">
-                    {comment.authorId === currentUserId ? <button onClick={changeRoute} id="edit-comment-button">Edit comment</button> : ''}
-                    {comment.authorId === currentUserId ? <button onClick={remove} id="remove-comment-button">Delete comment</button> : ''}
+                    {comment.authorId === currentUserId ? <button onClick={changeRoute} id="edit-comment-button">Edit comment</button> : undefined}
+                    <button onClick={remove} id="remove-comment-button">Delete comment</button>
                 </div>
             )}
         </div>

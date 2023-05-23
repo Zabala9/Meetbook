@@ -1,3 +1,20 @@
+#elements-comment-index{
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+#label-comments{
+    margin-left: -40px;
+}
+
+#container-label-all-comments{
+    margin-top: 20px;
+}
+
+#container-comment-form{
+    margin-left: -30px;
+}
+
 #owner-comment{
     font-family: cursive;
     font-size: 20px;
@@ -25,8 +42,11 @@
 #dropdown-content-comment{
     display: flex;
     flex-direction: column;
+    border-radius: 5px;
     position: absolute;
-    /* margin-left: -100px; */
+    padding: 5px;
+    background-color: #ddd;
+    box-shadow: 5px 5px 5px rgb(165, 165, 165);
 }
 
 #open-menu-comment{

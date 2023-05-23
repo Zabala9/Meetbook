@@ -23,12 +23,17 @@ const CommentIndex = () => {
     return(
         <>
             <ul id="elements-comment-index">
+                <div id="container-comment-form">
+                    <CommentForm />
+                </div>
+                <div id="container-label-all-comments">
+                    <label id="label-comments">All Comments</label>
+                </div>
                 {
                     comments.map(comment =>
                         <CommentItem key={`comment${comment.id}`} comment={comment} />
                     )
                 }
-                <CommentForm />
             </ul>
         </>
     )
