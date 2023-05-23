@@ -36,12 +36,12 @@ const SearchUser = () => {
                         valueSearch.length > 0 ? arr.map((name) =>
                             // <li>
                             //     <button onClick={() => {
-                            //         let newPath = name[0].split(' ').join('');
-                            //         history.push(newPath);
-                            //         window.location.reload(false);
-                            //         // <ProfileVisited path={newPath} />
-                                    
-                            //     }}>{name}</button>
+                            //         const newId = name[1];
+                            //         const IdString = newId.toString();
+                            //         let newName = name[0].split(' ').join('');
+                            //         history.push(IdString+'/'+newName);
+                            //         setValueSearch("");
+                            //     }}>{name[0]}</button>
                             // </li>
                             // console.log(name)
                             <SearchUserShow id={name[1]} name={name[0]} />
