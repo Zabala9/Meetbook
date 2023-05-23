@@ -3,6 +3,8 @@ import PostsButton from "./PostButton";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { fetchUsers } from '../../store/user.js';
+import { fetchComments } from "../../store/comment";
+import { fetchLikes } from "../../store/like";
 import './postIndex.css';
 
 const PostItem = ({post}) => {
@@ -11,11 +13,16 @@ const PostItem = ({post}) => {
     const allUsers = useSelector(state => state.users);
     const likes = useSelector(state => state.likes);
     const values = Object.values(likes);
+    const comments = useSelector(state => state.comments);
+    const valuesComments = Object.values(comments);
 
     const likesCurrentPost = values.filter((like) => like.postId === post.id);
+    const commentsCurrentPost = valuesComments.filter((comment) => comment.postId === post.id);
 
     useEffect(() => {
         dispatch(fetchUsers());
+        dispatch(fetchComments());
+        dispatch(fetchLikes());
     }, [dispatch]);
 
     let nameOwnerPost;
@@ -38,7 +45,8 @@ const PostItem = ({post}) => {
                 </div>
                 <div id="container-likes-comments">
                     {likesCurrentPost.length > 0 ? <Link to={`/${post.id}`} id='link-likes' >{likesCurrentPost.length} like</Link> : undefined}
-                    <Link to={`/${post.id}`} id='link-comments' >comments</Link>
+                    {commentsCurrentPost.length > 0 ? <Link to={`/${post.id}`} id='link-comments' >{commentsCurrentPost.length} comments</Link> :
+                        <Link to={`/${post.id}`} id='link-comments' > comment</Link> }
                 </div>
             </div>
         // </div>
