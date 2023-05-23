@@ -9,13 +9,14 @@ import CommentFormModal from "./components/Comments/CommentFormModal";
 import GamesForm from "./components/Games";
 import NavBar from "./components/NavBar/NavBar";
 import PostIndex from "./components/posts/PostIndex";
+import ProfileVisited from "./components/Search/profileVisited";
 
-function App() {
+function App({path}) {
 
   return (
     <>
       <NavBar />
-      <Navigation />
+      {/* <Navigation /> */}
       <Switch>
         <Route exact path="/" >
           <LoginFormPage />
@@ -38,6 +39,9 @@ function App() {
         <Route exact path='/:postId/comment/:commentId/edit'>
           <PostShowModal />
           <CommentFormModal />
+        </Route>
+        <Route exact path={path}>
+          <ProfileVisited />
         </Route>
       </Switch>
     </>

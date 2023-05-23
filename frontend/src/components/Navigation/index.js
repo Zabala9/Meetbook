@@ -4,6 +4,7 @@ import { Redirect } from "react-router-dom";
 import { useHistory } from 'react-router-dom';
 import ProfileVisited from '../Search/profileVisited';
 import './Navigation.css';
+import App from '../../App';
 
 function Navigation() {
     const sessionUser = useSelector(state => state.session.user);
@@ -20,16 +21,16 @@ function Navigation() {
         finalPath = '/' + newPath[1] + '/' + nameInPath;
     }
 
-
-    let renderLinks;
-    if(history.location.pathname === finalPath){
-        renderLinks = <ProfileVisited />
-    }
+    // let renderLinks;
+    // if(history.location.pathname === finalPath){
+    //     renderLinks = <ProfileVisited />
+    // }
 
     return(
-        <li id='li-index-navigation'>
-            {renderLinks}
-        </li>
+        <App path={finalPath} />
+        // <li id='li-index-navigation'>
+        //     {renderLinks}
+        // </li>
     );
 };
 
