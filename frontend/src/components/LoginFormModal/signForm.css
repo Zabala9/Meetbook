@@ -6,6 +6,13 @@
     color: white;
     margin-left: 82px;
     margin-bottom: 25px;
+    padding: 3px;
+    transition: 0.5s;
+}
+
+#signup:hover{
+    font-size: 43px;
+    transition: 0.5s;
 }
 
 #errors-sign{
@@ -31,6 +38,9 @@
     border-radius: 10px;
     font-size: 30px;
     width: 250px;
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 3px;
+    text-indent: 2px;
 }
 
 #lastname{
@@ -42,6 +52,9 @@
     border-radius: 10px;
     font-size: 30px;
     width: 350px;
+    padding: 3px;
+    font-family: 'Josefin Sans', sans-serif;
+    text-indent: 2px;
 }
 
 #email > input{
@@ -53,6 +66,9 @@
     border-radius: 10px;
     font-size: 30px;
     width: 400px;
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 3px;
+    text-indent: 2px;
 }
 
 #password-sign{
@@ -63,6 +79,9 @@
     border-radius: 10px;
     font-size: 30px;
     width: 250px;
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 3px;
+    text-indent: 2px;
 }
 
 #confirm-password{
@@ -73,6 +92,9 @@
     border-radius: 10px;
     font-size: 30px;
     width: 350px;
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 3px;
+    text-indent: 2px;
 }
 
 #sign-up{
@@ -83,5 +105,14 @@
     margin-bottom: 25px;
     color: white;
     font-size: 40px;
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 3px;
     background-color: rgb(69, 69, 69);
+    transition: 0.5s;
+}
+
+#sign-up:hover{
+    font-size: 43px;
+    cursor: pointer;
+    transition: 0.5s;
 }

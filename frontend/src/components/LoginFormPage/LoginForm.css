@@ -24,6 +24,14 @@ body{
     font-size: 25px;
     color: white;
     background-color: rgb(69, 69, 69);
+    padding: 3px;
+    transition: 0.5s;
+}
+
+#form-left:hover{
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.5s;
 }
 
 #rigth{
@@ -42,14 +50,20 @@ body{
 }
 
 #email > input{
+    width: 95%;
     font-size: 40px;
+    font-family: 'Josefin Sans', sans-serif;
+    text-indent: 3px;
 }
 
 #password > input{
     border-radius: 10px;
     font-size: 40px;
+    width: 91%;
     margin-bottom: 10px;
     margin-left: 10px;
+    font-family: 'Josefin Sans', sans-serif;
+    text-indent: 3px;
 }
 
 #login-button{
@@ -58,8 +72,14 @@ body{
     border-radius: 10px;
     font-size: 50px;
     width: 500px;
-    margin-left: 13px;
+    margin-left: 10px;
+    margin-right: 10px;
     margin-bottom: 35px;
+    padding: 3px;
     background-color: red;
     color: white;
+}
+
+#login-button:hover{
+    cursor: pointer;
 }

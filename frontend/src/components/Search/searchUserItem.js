@@ -10,8 +10,8 @@ const SearchUserShow = ({id, name}) => {
     let newPath;
     const changeRoute = () => {
         newPath = newId;
-        history.push(newPath+'/'+newName);
-        // window.location.reload(false);
+        history.push('/'+newPath+'/'+newName);
+        window.location.reload(false);
     };
 
     return(
