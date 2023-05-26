@@ -36,7 +36,7 @@ const PostShow = () => {
                         <h3 id="content">{post.content}</h3>
                         {post.photoUrl !== null ? <img src={post.photoUrl} id="img-post" /> : '' }
                     </div>
-                    <label id="post-button"><PostsButton key={post.id} post={post} /></label>
+                    {currentUser.id === post.authorId ? <label id="post-button"><PostsButton key={post.id} post={post} /></label> : undefined}
                 </div>
                 <br></br>
                 
