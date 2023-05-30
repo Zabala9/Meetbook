@@ -1,10 +1,12 @@
 import React, {useEffect, useState} from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useHistory } from 'react-router-dom';
 import { getUsers, fetchUsers } from "../../store/user";
 import SearchUserShow from "./searchUserItem";
 import './searchUser.css';
 
 const SearchUser = () => {
+    const history = useHistory();
     const dispatch = useDispatch();
     let allUsers = useSelector(getUsers);
 
@@ -40,6 +42,9 @@ const SearchUser = () => {
         
     });
 
+    // const changeRoute = (id, name) => {
+
+    // };
 
     return(
         <>
@@ -53,17 +58,17 @@ const SearchUser = () => {
                 <div id="list-names">
                     {
                         valueSearch.length > 0 ? arr.map((name) =>
-                            // <li>
-                            //     <button onClick={() => {
-                            //         const newId = name[1];
-                            //         const IdString = newId.toString();
-                            //         let newName = name[0].split(' ').join('');
-                            //         history.push(IdString+'/'+newName);
-                            //         setValueSearch("");
-                            //     }}>{name[0]}</button>
-                            // </li>
+                            <div id="container-name-search">
+                                <button id="button-name-search" onClick={() => {
+                                    const newId = name[1];
+                                    const IdString = newId.toString();
+                                    let newName = name[0].split(' ').join('');
+                                    history.push(IdString+'/'+newName);
+                                    setValueSearch('');
+                                }}>{name[0]}</button>
+                            </div>
                             // console.log(name)
-                            <SearchUserShow id={name[1]} name={name[0]} />
+                            // <SearchUserShow id={name[1]} name={name[0]} />
                         ) : ''
                     }
                 </div>
