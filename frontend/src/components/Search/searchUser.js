@@ -15,12 +15,31 @@ const SearchUser = () => {
     const arr = [];
     const [valueSearch, setValueSearch] = useState("");
     allUsers.forEach((user) => {
-        if(user.name.toLowerCase().includes(valueSearch)){
-            arr.push([user.name + ' ' + user.lastname, user.id]);
-        } else if(user.lastname.toLowerCase().includes(valueSearch)){
-            arr.push([user.name + ' ' + user.lastname, user.id]);
-        };
+        if(valueSearch.includes(' ')){
+            const newValueSearch = valueSearch.split(' ');
+
+            if(valueSearch[1] !== ' '){
+                if(user.name.toLowerCase().includes(newValueSearch[0]) && user.lastname.toLowerCase().includes(newValueSearch[1])){
+                    arr.push([user.name + ' ' + user.lastname, user.id]);
+                }
+            } else {
+                if(user.name.toLowerCase().includes(newValueSearch[0])){
+                    arr.push([user.name + ' ' + user.lastname, user.id]);
+                } else if(user.lastname.toLowerCase().includes(newValueSearch[0])){
+                    arr.push([user.name + ' ' + user.lastname, user.id]);
+                }
+            }
+
+        } else {
+            if(user.name.toLowerCase().includes(valueSearch)){
+                arr.push([user.name + ' ' + user.lastname, user.id]);
+            } else if(user.lastname.toLowerCase().includes(valueSearch)){
+                arr.push([user.name + ' ' + user.lastname, user.id]);
+            };
+        }
+        
     });
+
 
     return(
         <>
