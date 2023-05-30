@@ -26,8 +26,6 @@ const PostIndex = () => {
 
     if(!currentUser) return <Redirect to={'/'} />
 
-    console.log(paths);
-
     return(
         <>
             <div id='conteiner-elements-post-index'>

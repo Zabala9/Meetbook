@@ -6,8 +6,6 @@ import { paths } from "../posts/PostIndex";
 import './profile.css';
 
 function Profile(){
-    // paths.push('/profile');
-    console.log(paths);
     const sessionUser = useSelector(state => state.session.user);
 
     if(!sessionUser) return <Redirect to={'/'} />

@@ -34,8 +34,6 @@ const LikeForm = () => {
             }
         }
     };
-
-    // console.log(likesCurrentPost);
     
     return(
         <>
