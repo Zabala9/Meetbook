@@ -5,7 +5,18 @@
 }
 
 #list-names{
-    /* background-color: greenyellow; */
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: white;
+    width: 180px;
+    margin-top: 3px;
+    margin-left: 45px;
+    position: absolute;
+}
+
+#container-name-search{
+    margin-bottom: 3px;
+    margin-top: 3px;
 }
 
 #icon-search{
@@ -51,7 +62,8 @@
 }
 
 #button-name-search{
-    margin-left: 50px;
+    width: 80%;
+    margin-left: 20px;
     padding: 5px;
     font-weight: bold;
     font-size: 20px;

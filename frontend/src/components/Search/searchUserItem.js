@@ -15,9 +15,9 @@ const SearchUserShow = ({id, name}) => {
     };
 
     return(
-        <li>
+        <div id="container-name-search">
             <button onClick={changeRoute} id="button-name-search">{name}</button>
-        </li>
+        </div>
     )
 };
 
