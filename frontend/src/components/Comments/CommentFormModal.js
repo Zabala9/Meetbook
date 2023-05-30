@@ -8,12 +8,11 @@ function CommentFormModal() {
     const {postId} = useParams();
     const [showEditCommentModal, setShowEditCommentModal] = useState(true);
 
-    console.log(postId, 'here');
-
     const changeRoute = () => {
-        history.goBack();
-        // let path = `/${postId}`;
-        // history.push(path);
+        // history.goBack();
+        // setShowEditCommentModal(false);
+        let path = `/${postId}`;
+        history.push(path);
     };
 
     return(

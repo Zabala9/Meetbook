@@ -6,7 +6,10 @@ import PostItem from './PostItem.js';
 import PostForm from './PostForm.js';
 import './postIndex.css';
 
+export let paths = ['/feed'];
+
 const PostIndex = () => {
+    paths= ['/feed'];
     const dispatch = useDispatch();
     let posts = useSelector(getPosts);
     const history = useHistory();
@@ -14,6 +17,7 @@ const PostIndex = () => {
 
     if(history.location.pathname === '/profile'){
         posts = posts.filter((post) => post.authorId === currentUser.id)
+        paths = ['/profile'];
     };
 
     useEffect(() => {
@@ -21,6 +25,8 @@ const PostIndex = () => {
     }, [dispatch]);
 
     if(!currentUser) return <Redirect to={'/'} />
+
+    console.log(paths);
 
     return(
         <>

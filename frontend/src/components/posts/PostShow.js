@@ -4,6 +4,7 @@ import { getPost, fetchPost } from "../../store/posts";
 import { useHistory, Redirect, useParams } from "react-router-dom";
 import PostsButton from "./PostButton";
 import CommentIndex from "../Comments/CommentIndex";
+import { paths } from "./PostIndex";
 import './postShow.css';
 import LikeIndex from "../Likes/LikeIndex";
 
@@ -19,7 +20,9 @@ const PostShow = () => {
     }, [dispatch, postId]);
 
     const goBack = () => {
-        history.goBack();
+        // history.goBack();
+        let path = paths[0];
+        history.push(path);
     };
 
     if(!currentUser) return <Redirect to={'/'} />

@@ -2,9 +2,12 @@ import React from "react";
 import { useSelector } from "react-redux";
 import PostIndex from "../posts/PostIndex";
 import { Redirect } from "react-router-dom";
+import { paths } from "../posts/PostIndex";
 import './profile.css';
 
 function Profile(){
+    // paths.push('/profile');
+    console.log(paths);
     const sessionUser = useSelector(state => state.session.user);
 
     if(!sessionUser) return <Redirect to={'/'} />

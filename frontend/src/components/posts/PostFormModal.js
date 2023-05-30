@@ -8,13 +8,14 @@ function PostFormModal(){
     const [showEditPostModal, setShowEditPostModal] = useState(true);
 
     const changeRoute = () => {
-        history.goBack();
+        // history.goBack();
+        setShowEditPostModal(false);
     };
 
     return(
         <>
             {showEditPostModal && (
-                <Modal onClose={changeRoute}>
+                <Modal>
                     <PostForm />
                 </Modal>
             )}
