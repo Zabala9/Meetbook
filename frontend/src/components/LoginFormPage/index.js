@@ -70,7 +70,8 @@ function LoginFormPage(){
                         <br />
                         <label>You can try our website without Log In</label>
                         <br></br>
-                        <input id='form-left' type='submit' value={'here'} />
+                        <label>clicking here </label>
+                        <input id='form-left' type='submit' value={'demo User'} />
                     </form>
                 </div>
                 <div id='rigth'>

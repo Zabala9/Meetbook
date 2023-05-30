@@ -19,6 +19,7 @@ const LikeForm = () => {
     const postId = currentPostId;
 
     let like;
+    let currentUserLikes = likesCurrentPost.filter((value) => value.authorId === currentUserId );
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -26,7 +27,6 @@ const LikeForm = () => {
         if(likesCurrentPost.length === 0){
             dispatch(createLike(like));
         } else {
-            const currentUserLikes = likesCurrentPost.filter((value) => value.authorId === currentUserId );
             if(currentUserLikes.length > 0){
                 dispatch(deleteLike(currentUserLikes[0].id));
             } else if (currentUserLikes.length === 0){
@@ -34,6 +34,8 @@ const LikeForm = () => {
             }
         }
     };
+
+    // console.log(likesCurrentPost);
     
     return(
         <>
@@ -42,7 +44,7 @@ const LikeForm = () => {
             </div>
             <button onClick={handleSubmit} id="button-like-form">
                 <i className="fa-solid fa-thumbs-up" id="icon-like" ></i>
-                <label id="like-label">Like</label>
+                {currentUserLikes.length === 0 ? <label id="like-label">Like</label> : <label id="like-label">Unlike</label>}
             </button>
         </>
     );

@@ -13,7 +13,9 @@
 }
 
 #button-like-form{
+    display: flex;
     margin-top: 8px;
-    width: 100px;
+    width: 105px;
     height: 30px;
+    padding: 5px;
 }

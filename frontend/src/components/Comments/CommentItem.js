@@ -13,8 +13,6 @@ const CommentItem = ({comment}) => {
     const allUsers = useSelector(state => state.users);
     const currentPost = useSelector(state => state.posts[postId]);
 
-    console.log(comment);
-
     useEffect(() => {
         dispatch(fetchUsers());
         dispatch(getPost(postId));
