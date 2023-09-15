@@ -37,7 +37,7 @@ const PostIndex = () => {
                         <PostForm />
                         {window.location.pathname === '/profile' ? <label id='label-posts'>Posts</label> : undefined}
                         {
-                            posts.map(post =>
+                            posts.toReversed().map(post =>
                                 <PostItem key={`post${post.id}`} post={post} />
                             )
                         }

@@ -42,10 +42,6 @@ const SearchUser = () => {
         
     });
 
-    // const changeRoute = (id, name) => {
-
-    // };
-
     return(
         <>
             <div>
