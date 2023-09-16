@@ -79,16 +79,24 @@ const PostForm = () => {
         <>
             <form onSubmit={handleSubmit} id='form-post'>
                 <h2 id='form-type'>{formType === 'Update Post' ? 'Update Post' : ''}</h2>
-                <label >
-                    <input type='text' value={content} id='text-post'
-                        onChange={(e) => setContent(e.target.value)}
-                        placeholder="What's on your mind?"
-                        required
-                    />
-                </label>
-                <button id='button-post-form' >{formType === 'Create Post' ? 'Post' : 'Edit Post'}</button>
-                <br></br>
-                <input type='file' id='choose-file' onChange={handleFile} />
+                <div className='container-create-post-labels'>
+                    <label>
+                        <input type='text' value={content} id='text-post'
+                            onChange={(e) => setContent(e.target.value)}
+                            placeholder="What's on your mind?"
+                            required
+                        />
+                    </label>
+                    <button id='button-post-form' >{formType === 'Create Post' ? 'Post' : 'Edit Post'}</button>
+                    <br></br>
+                    <div className='container-choose-file'>
+                        <label htmlFor='choose-file' id='choose-file-label'>
+                            Add image to the post
+                            <i className="fa-solid fa-image" id='img-choose-file'></i>
+                        </label>
+                        <input type='file' style={{display: 'none'}} id='choose-file' onChange={handleFile} />
+                    </div>
+                </div>
                 <br></br>
                 <br></br>
                 <label id='label-image-preview'>Image preview</label>
