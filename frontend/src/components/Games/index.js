@@ -21,15 +21,6 @@ const GamesForm = () => {
             </li>
             <li id="game-li">
                 <label id="name-game">
-                    <a target='_blank' href="https://apporator.github.io/fly-type/" id="a-tag">Fly Type</a>
-                    <br></br>
-                    <a target='_blank' href="https://apporator.github.io/fly-type/" id="a-tag">
-                        <img id="img-game" src={'https://meetbook-seeds.s3.us-west-1.amazonaws.com/fly+type.png'} />
-                    </a>
-                </label>
-            </li>
-            <li id="game-li">
-                <label id="name-game">
                     <a target='_blank' href="https://dericxlee.github.io/enter-the-hollow/" id="a-tag">Enter the hollow</a>
                     <br></br>
                     <a target='_blank' href="https://dericxlee.github.io/enter-the-hollow/" id="a-tag">
